@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -Wall -Wextra -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Tyrian.dir/main.cpp.o  -o Tyrian  -framework sfml-system -framework sfml-window -framework sfml-graphics model/libmodel.a view/libview.a controller/libcontroller.a util/libutil.a 

@@ -1,0 +1,2 @@
+/usr/bin/ar cq libcontroller.a  CMakeFiles/controller.dir/Keyboard.cpp.o CMakeFiles/controller.dir/Stopwatch.cpp.o
+/usr/bin/ranlib libcontroller.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cq libmodel.a  CMakeFiles/model.dir/Entity.cpp.o CMakeFiles/model.dir/BGTile.cpp.o CMakeFiles/model.dir/Bullet.cpp.o CMakeFiles/model.dir/EnemyShip.cpp.o CMakeFiles/model.dir/PlayerShip.cpp.o CMakeFiles/model.dir/World.cpp.o
+/usr/bin/ranlib libmodel.a

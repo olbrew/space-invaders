@@ -1,0 +1,2 @@
+/usr/bin/ar cq libutil.a  CMakeFiles/util.dir/Position.cpp.o
+/usr/bin/ranlib libutil.a

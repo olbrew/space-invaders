@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/src/controller/Keyboard.cpp
+
+/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/src/controller/Stopwatch.cpp
+
