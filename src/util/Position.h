@@ -8,6 +8,7 @@ namespace util
 	public:
         Position();
 		Position(const unsigned int, const unsigned int);
+        void dummy();
 	private:
 		unsigned int _x;
 		unsigned int _y;

@@ -9,5 +9,5 @@
 
 namespace ty
 {
-
+    World::World() {}
 }

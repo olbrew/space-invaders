@@ -1,8 +1,8 @@
 /**
  * @file
- *		Small position class which keeps an x- and y-coordinate.
+ *      Small position class which keeps an x- and y-coordinate.
  * @author
- *		Olivier Brewaeys
+ *      Olivier Brewaeys
  */
 
 #include "Position.h"

@@ -1,5 +1,0 @@
-/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/build/src/model/CMakeFiles/model.dir
-/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/build/src/util/CMakeFiles/util.dir
-/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/build/src/view/CMakeFiles/view.dir
-/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/build/src/CMakeFiles/Tyrian.dir
-/Users/exatto/Documents/Edu/INF/S5/Gevorderd Programmeren/exercises/tyrian/build/src/controller/CMakeFiles/controller.dir

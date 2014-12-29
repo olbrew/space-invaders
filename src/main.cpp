@@ -1,10 +1,16 @@
 /**
- * @file		   main function, makes and executes the game
- * @author         Olivier Brewaeys
+ * @file
+ *      main function, makes and executes the game.
+ * @author
+ *      Olivier Brewaeys
  */
 
 #include "view/Window.h"
 
+/**
+ * main function, makes and executes the game
+ * @return  exit code
+ */
 int main()
 {
     Window w;

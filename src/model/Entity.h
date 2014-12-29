@@ -10,10 +10,11 @@ namespace ty
     {
     public:
         Entity();
-        Entity(const util::Position);
+        Entity(const util::Position, const unsigned int);
         void move(const util::Position);
-    private:
+    protected:
         util::Position _pos;
+        unsigned int _radius;
     };
 }
 

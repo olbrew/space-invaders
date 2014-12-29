@@ -1,2 +1,0 @@
-/usr/bin/ar cq libview.a  CMakeFiles/view.dir/Window.cpp.o
-/usr/bin/ranlib libview.a

@@ -22,9 +22,13 @@ You will now have an executable you can run in the bin directory.
 
 Design
 ------
-Composite design pattern.
-Modularity through stand-alone libraries according to the Model-Controller-View
-concept.
+* Composite design pattern
+* Model-View-Controller
+* Deque for performant insert and deletes at end of queue
+* Smart pointers so we don't have to concern ourselves with manual memory management
+    * Unique_ptr instead of shared_ptr because it simplifies code logic and
+      improves performance because no reference count has to be kept.
+*
 
 //Insert UML schema here.
 
