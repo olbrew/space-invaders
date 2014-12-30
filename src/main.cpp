@@ -13,7 +13,7 @@
  */
 int main()
 {
-    Window w;
+    tysfml::Window w;
     w.show();
     return 0;
 }

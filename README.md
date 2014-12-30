@@ -26,8 +26,9 @@ Design
 * Model-View-Controller
 * Deque for performant insert and deletes at end of queue
 * Smart pointers so we don't have to concern ourselves with manual memory management
-    * Unique_ptr instead of shared_ptr because it simplifies code logic and
-      improves performance because no reference count has to be kept.
+    * No unique_ptr possible, because multiple objects must be able to access
+      same object. E.g.: Spaceship must be updated in the world, while it must
+      be plotted with SFML.
 *
 
 //Insert UML schema here.

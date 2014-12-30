@@ -6,15 +6,12 @@
 
 namespace ty
 {
-    using std::deque;
-    using std::unique_ptr;
-
     class World: public Entity
     {
     public:
         World();
     private:
-        deque<unique_ptr<Entity>> _worldEntities;
+        std::deque<std::unique_ptr<Entity>> _worldEntities;
     };
 }
 
