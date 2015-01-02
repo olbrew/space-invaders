@@ -5,7 +5,9 @@
  *      Olivier Brewaeys
  */
 
-#include "view/Window.h"
+#include "controller/Game.h"
+#include "model/World.h"
+#include <memory>
 
 /**
  * main function, makes and executes the game
@@ -13,7 +15,9 @@
  */
 int main()
 {
-    tysfml::Window w;
-    w.draw();
+    std::shared_ptr<ty::World> world(new ty::World);
+    ty::Game game(world);
+
+
     return 0;
 }

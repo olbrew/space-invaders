@@ -6,7 +6,8 @@ namespace tysfml
      * Window ctor.
      * Sets up SFML Window.
      */
-    Window::Window(): _window(sf::VideoMode(800, 600), "Tyrian") {}
+    Window::Window(std::shared_ptr<ty::World> world): _world(world),
+        _window(sf::VideoMode(800, 600), "Tyrian") {}
 
     /**
      * Window dtor.
@@ -46,22 +47,44 @@ namespace tysfml
 
     void Window::createSprite()
     {
-        // bgSprite
+        // background
         sf::Sprite bgSprite;
-
         loadTexture();
         bgSprite.setTexture(_textures.top());
         bgSprite.setTextureRect(sf::IntRect(0, 0, 800, 600));
         _sprites.push(bgSprite);
+
+        // playership
+        sf::Sprite psSprite;
+        loadTexture();
+        psSprite.setTexture(_textures.top());
+        _sprites.push(psSprite);
+
+        // enemyship
+        sf::Sprite esSprite;
+        loadTexture();
+        esSprite.setTexture(_textures.top());
+        _sprites.push(esSprite);
     }
 
     void Window::loadTexture()
     {
-        sf::Texture bgTexture;
         TextureLoader loader;
-        loader.getBgTexture(bgTexture);
 
+        // background
+        sf::Texture bgTexture;
+        loader.getBgTexture(bgTexture);
         _textures.push(bgTexture);
+
+        // background
+        sf::Texture psTexture;
+        loader.getPlayerShipTexture(psTexture);
+        _textures.push(psTexture);
+
+        // background
+        sf::Texture esTexture;
+        loader.getEnemyShipTexture(esTexture);
+        _textures.push(esTexture);
     }
 
 } /* namespace tysfml */

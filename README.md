@@ -24,11 +24,18 @@ Design
 ------
 * Composite design pattern
 * Model-View-Controller
+* One game object, controls the model and so the view syncs with the model.
+    * Game has pointer to world object with all its entities. Manipulates it
+      through time and player input (Stopwatch and Keyboard classes.)
+    * The view (Window class) also has a pointer to the world and updates itself
+    (the SFML output) whenever the model changes.
+* Try to limit memory consumption through extensive use of pointers and
+  references.
+    * Always pass user-defined and STL types by reference if possible.
+    * If not possible use smart pointers.
+        * Smart pointers -> Effectively eliminate whole family of memory-related bugs
+        at no (unique_ptr) or minimal (shared_ptr) effect on perfomance.
 * Deque for performant insert and deletes at end of queue
-* Smart pointers so we don't have to concern ourselves with manual memory management
-    * No unique_ptr possible, because multiple objects must be able to access
-      same object. E.g.: Spaceship must be updated in the world, while it must
-      be plotted with SFML.
 * In view library, textures are loaded through textureloader class when their
   corresponding objects are first made and then popped onto a textures stack
   member, because they have to exist as long as their corresponding sprites
