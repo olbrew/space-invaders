@@ -29,7 +29,10 @@ Design
     * No unique_ptr possible, because multiple objects must be able to access
       same object. E.g.: Spaceship must be updated in the world, while it must
       be plotted with SFML.
-*
+* In view library, textures are loaded through textureloader class when their
+  corresponding objects are first made and then popped onto a textures stack
+  member, because they have to exist as long as their corresponding sprites
+  exist.
 
 //Insert UML schema here.
 

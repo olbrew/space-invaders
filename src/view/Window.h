@@ -2,8 +2,8 @@
 #define WINDOW_H_
 
 #include <SFML/Graphics.hpp>
-// temporary, until code is moved to Plotter class
-#include <iostream>
+#include <stack>
+#include "TextureLoader.h"
 
 namespace tysfml
 {
@@ -12,9 +12,13 @@ namespace tysfml
     public:
         Window();
         ~Window();
-        void show();
+        void draw();
+        void createSprite();
+        void loadTexture();
     private:
         sf::RenderWindow _window;
+        std::stack<sf::Texture> _textures;
+        std::stack<sf::Sprite> _sprites;
     };
 } /* namespace tysfml */
 

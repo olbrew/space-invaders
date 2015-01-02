@@ -24,27 +24,8 @@ namespace tysfml
      * between the window clear and display function,
      * all our entities get drawn.
      */
-    void Window::show()
+    void Window::draw()
     {
-        // TODO move code into Plotter class
-        sf::Texture bgTile;
-        try
-        {
-            if (!bgTile.loadFromFile("../resources/img/shapesz.png",
-                                     sf::IntRect(71, 84, 48, 27)))
-            {
-                throw std::runtime_error("Could not load bgTile texture from file");
-            }
-        }
-        catch (std::runtime_error& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-        bgTile.setRepeated(true);
-        sf::Sprite bgSprite;
-        bgSprite.setTexture(bgTile);
-        bgSprite.setTextureRect(sf::IntRect(0, 0, 800, 600));
-
         // main loop
         while (_window.isOpen())
         {
@@ -55,9 +36,32 @@ namespace tysfml
                     _window.close();
             }
             _window.clear(sf::Color::White);
-            // draw entities
-            _window.draw(bgSprite);
+            // draw sprites
+            createSprite();
+            _window.draw(_sprites.top());
+
             _window.display();
         }
     }
+
+    void Window::createSprite()
+    {
+        // bgSprite
+        sf::Sprite bgSprite;
+
+        loadTexture();
+        bgSprite.setTexture(_textures.top());
+        bgSprite.setTextureRect(sf::IntRect(0, 0, 800, 600));
+        _sprites.push(bgSprite);
+    }
+
+    void Window::loadTexture()
+    {
+        sf::Texture bgTexture;
+        TextureLoader loader;
+        loader.getBgTexture(bgTexture);
+
+        _textures.push(bgTexture);
+    }
+
 } /* namespace tysfml */

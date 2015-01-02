@@ -14,6 +14,6 @@
 int main()
 {
     tysfml::Window w;
-    w.show();
+    w.draw();
     return 0;
 }
