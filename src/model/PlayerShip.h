@@ -1,14 +1,18 @@
-#ifndef PLAYERSHIP_H_
-#define PLAYERSHIP_H_
+#ifndef PLAYERSHIP_H
+#define PLAYERSHIP_H
 
 #include "Entity.h"
+#include <cassert>
 
-namespace ty
-{
+namespace ty {
     class PlayerShip: public Entity
     {
-
+    public:
+        PlayerShip();
+        void move(const util::Position);
+    private:
+        unsigned int _life;
     };
-}
+} /* namespace ty */
 
 #endif

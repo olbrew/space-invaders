@@ -10,11 +10,6 @@
 namespace util
 {
     /**
-     * Default ctor.
-     */
-    Position::Position(): _x(0), _y(0) {}
-
-    /**
      * Initialise position on given x, y coordinates
      * @param     x     x-coordinate
      * @param     y     y-coordinate

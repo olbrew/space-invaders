@@ -34,14 +34,17 @@ Design
     * Always pass user-defined and STL types by reference if possible.
     * If not possible use smart pointers.
         * Smart pointers -> Effectively eliminate whole family of memory-related bugs
-        at no (unique_ptr) or minimal (shared_ptr) effect on perfomance.
+        at no (`unique_ptr`) or minimal (`shared_ptr`) effect on perfomance.
+        * Tried to use unique_ptr's where applicable, but `make_unique` is only
+        present in C++14 and apparently cmake doesn't support C++14 yet, so
+        I left it out.
 * Deque for performant insert and deletes at end of queue
 * In view library, textures are loaded through textureloader class when their
   corresponding objects are first made and then popped onto a textures stack
   member, because they have to exist as long as their corresponding sprites
   exist.
 
-//Insert UML schema here.
+#Insert UML schema here.
 
 Author
 ------

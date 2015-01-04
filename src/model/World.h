@@ -1,8 +1,14 @@
-#ifndef WORLD_H_
-#define WORLD_H_
+#ifndef WORLD_H
+#define WORLD_H
 
 #include "Entity.h"
-#include <deque>
+#include <stack>
+#include <memory>
+#include "BGTile.h"
+#include "PlayerShip.h"
+#include "EnemyShip.h"
+#include "Bullet.h"
+
 
 namespace ty
 {
@@ -10,8 +16,10 @@ namespace ty
     {
     public:
         World();
+        void move(const util::Position);
     private:
-        std::deque<std::unique_ptr<Entity>> _worldEntities;
+        std::stack<std::shared_ptr<Entity>> _worldEntities;
+        unsigned int _score;
     };
 }
 

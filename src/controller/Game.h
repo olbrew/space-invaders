@@ -1,17 +1,21 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <memory>
 #include "../model/World.h"
 #include "../view/Window.h"
+#include <memory>
+#include <queue>
 
 namespace ty {
     class Game
     {
     public:
-        Game(std::shared_ptr<World>);
+        Game();
+        void start();
+        void playDefaultLevel();
     private:
-        std::shared_ptr<World> _world;
+        std::queue<std::shared_ptr<World>> _levels;
+        std::shared_ptr<tysfml::Window> _window;
     };
 } /* namespace ty */
 

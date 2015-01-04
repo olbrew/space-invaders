@@ -8,12 +8,11 @@ namespace ty
     class Entity
     {
     public:
-        Entity();
-        Entity(const util::Position, const unsigned int);
-        void move(const util::Position);
+        virtual void move(const util::Position) = 0;
     protected:
+        Entity(const util::Position, const double);
         util::Position _pos;
-        unsigned int _radius;
+        double _radius;
     };
 }
 

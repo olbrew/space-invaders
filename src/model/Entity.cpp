@@ -14,22 +14,17 @@
 namespace ty
 {
     /**
-     * Default ctor, initalises entity at center of world.
-     */
-    Entity::Entity(): _radius(1)
-    {
-        util::Position pos(4, 3);
-        _pos = pos;
-    }
-
-    /**
-     * Initalises entity at given position.
+     * Initalises entity at a position with a size (radius).
+     * This ctor is protected, because it is only needed in the ctors
+     * of its derived classes. There shouldn't be a need to make an
+     * entity object.
+     *
      * @param      pos      the position where to initalise this entity
      *                      in the world.
      * @param      radius   defines size of entity, because all entities are
      *                      abstracted as circles.
      */
     Entity::Entity(const util::Position pos,
-                   const unsigned int radius): _pos(pos), _radius(radius) {}
+                   const double radius): _pos(pos), _radius(radius) {}
 
 }

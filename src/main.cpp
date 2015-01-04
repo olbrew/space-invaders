@@ -6,18 +6,15 @@
  */
 
 #include "controller/Game.h"
-#include "model/World.h"
-#include <memory>
 
 /**
- * main function, makes and executes the game
+ * main function, creates a game and starts it.
  * @return  exit code
  */
 int main()
 {
-    std::shared_ptr<ty::World> world(new ty::World);
-    ty::Game game(world);
-
+    ty::Game game;
+    game.start();
 
     return 0;
 }
