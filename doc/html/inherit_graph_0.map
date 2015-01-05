@@ -1,8 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classty_1_1_entity.html" title="ty::Entity" alt="" coords="5,104,78,129"/>
 <area shape="rect" id="node2" href="$classty_1_1_b_g_tile.html" title="ty::BGTile" alt="" coords="140,5,219,31"/>
-<area shape="rect" id="node3" href="$classty_1_1_bullet.html" title="ty::Bullet" alt="" coords="143,55,216,80"/>
-<area shape="rect" id="node4" href="$classty_1_1_enemy_ship.html" title="ty::EnemyShip" alt="" coords="126,104,233,129"/>
-<area shape="rect" id="node5" href="$classty_1_1_player_ship.html" title="ty::PlayerShip" alt="" coords="128,153,231,179"/>
-<area shape="rect" id="node6" href="$classty_1_1_world.html" title="ty::World" alt="" coords="143,203,216,228"/>
+<area shape="rect" id="node4" href="$classty_1_1_bullet.html" title="ty::Bullet" alt="" coords="143,55,216,80"/>
+<area shape="rect" id="node5" href="$classty_1_1_enemy_ship.html" title="ty::EnemyShip" alt="" coords="126,104,233,129"/>
+<area shape="rect" id="node7" href="$classty_1_1_player_ship.html" title="ty::PlayerShip" alt="" coords="128,153,231,179"/>
+<area shape="rect" id="node9" href="$classty_1_1_world.html" title="ty::World" alt="" coords="143,203,216,228"/>
+<area shape="rect" id="node3" href="$classtysfml_1_1_b_g_tile.html" title="tysfml::BGTile" alt="" coords="295,5,399,31"/>
+<area shape="rect" id="node6" href="$classtysfml_1_1_enemy_ship.html" title="tysfml::EnemyShip" alt="" coords="281,104,413,129"/>
+<area shape="rect" id="node8" href="$classtysfml_1_1_player_ship.html" title="tysfml::PlayerShip" alt="" coords="283,153,411,179"/>
 </map>

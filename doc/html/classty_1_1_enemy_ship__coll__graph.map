@@ -1,3 +1,4 @@
 <map id="ty::EnemyShip" name="ty::EnemyShip">
-<area shape="rect" id="node2" href="$classty_1_1_entity.html" title="ty::Entity" alt="" coords="23,5,95,31"/>
+<area shape="rect" id="node2" href="$classty_1_1_entity.html" title="ty::Entity" alt="" coords="23,92,95,117"/>
+<area shape="rect" id="node3" href="$classutil_1_1_position.html" title="util::Position" alt="" coords="12,5,106,31"/>
 </map>

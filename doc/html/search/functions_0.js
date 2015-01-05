@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entity',['Entity',['../classty_1_1_entity.html#ad415eebe548e656837d547bcfa5499a8',1,'ty::Entity::Entity()'],['../classty_1_1_entity.html#ac48b0ce93fef0bea694062b7b0e50279',1,'ty::Entity::Entity(const util::Position)']]]
+  ['draw',['draw',['../classtysfml_1_1_window.html#a0795df0ae370d440b9967215c6b8b83c',1,'tysfml::Window']]]
 ];

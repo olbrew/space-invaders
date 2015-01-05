@@ -1,0 +1,4 @@
+<map id="tysfml::EnemyShip" name="tysfml::EnemyShip">
+<area shape="rect" id="node2" href="$classty_1_1_enemy_ship.html" title="ty::EnemyShip" alt="" coords="18,79,125,104"/>
+<area shape="rect" id="node3" href="$classty_1_1_entity.html" title="ty::Entity" alt="" coords="35,5,107,31"/>
+</map>
