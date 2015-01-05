@@ -1,7 +1,7 @@
 ADD_LIBRARY(view
+    Window.cpp
     PlayerShip.cpp
     EnemyShip.cpp
     BGTile.cpp
-    TextureLoader.cpp
-    Window.cpp
+    Bullet.cpp
     )

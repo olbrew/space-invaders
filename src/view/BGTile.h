@@ -1,5 +1,5 @@
-#ifndef BGTILE_H
-#define BGTILE_H
+#ifndef BGTILE_SFML_H
+#define BGTILE_SFML_H
 
 #include "../model/BGTile.h"
 #include <SFML/Graphics.hpp>
@@ -12,6 +12,7 @@ namespace tysfml {
     public:
         BGTile();
         void loadTexture();
+        const sf::Sprite& getSprite() const;
     private:
         sf::Texture _texture;
         sf::Sprite _sprite;

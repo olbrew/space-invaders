@@ -9,7 +9,6 @@
 #include "EnemyShip.h"
 #include "Bullet.h"
 
-
 namespace ty
 {
     class World: public Entity
@@ -17,6 +16,7 @@ namespace ty
     public:
         World();
         void move(const util::Position);
+        void score(const int);
     private:
         std::stack<std::shared_ptr<Entity>> _worldEntities;
         unsigned int _score;

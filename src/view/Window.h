@@ -1,10 +1,12 @@
 #ifndef WINDOW_H_
 #define WINDOW_H_
 
-#include "TextureLoader.h"
 #include "../model/World.h"
+#include "BGTile.h"
+#include "PlayerShip.h"
+#include "EnemyShip.h"
+#include "Bullet.h"
 #include <SFML/Graphics.hpp>
-#include <memory>
 #include <stack>
 
 namespace tysfml
@@ -12,16 +14,11 @@ namespace tysfml
     class Window
     {
     public:
-        Window(std::shared_ptr<ty::World>);
+        Window();
         ~Window();
         void draw();
-        void createSprite();
-        void loadTexture();
     private:
-        std::shared_ptr<ty::World> _world;
         sf::RenderWindow _window;
-        std::stack<sf::Texture> _textures;
-        std::stack<sf::Sprite> _sprites;
     };
 } /* namespace tysfml */
 

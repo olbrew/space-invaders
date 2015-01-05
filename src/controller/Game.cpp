@@ -38,7 +38,7 @@ namespace ty
     {
         std::shared_ptr<World> defaultLevel = std::make_shared<World>();
         _levels.push(defaultLevel);
-        _window = std::make_shared<tysfml::Window>(defaultLevel);
+        _window = std::make_shared<tysfml::Window>();
         _window->draw();
     }
 

@@ -34,4 +34,12 @@ namespace ty
      * @param    pos      empty position
      */
     void World::move(const util::Position) {}
+
+    void World::score(const int points)
+    {
+        if (_score + points <= 0)
+            _score = 0;
+        else
+            _score += points;
+    }
 }

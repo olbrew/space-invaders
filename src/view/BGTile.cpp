@@ -24,4 +24,9 @@ namespace tysfml {
         }
         _texture.setRepeated(true);
     }
+
+    const sf::Sprite& BGTile::getSprite() const
+    {
+        return _sprite;
+    }
 } /* namespace tysfml */

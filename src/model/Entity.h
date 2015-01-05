@@ -9,10 +9,16 @@ namespace ty
     {
     public:
         virtual void move(const util::Position) = 0;
+        const util::Position& getPos() const;
     protected:
-        Entity(const util::Position, const double);
+        // hidden ctors
+        Entity();
+        Entity(const unsigned int);
+        Entity(const util::Position, const unsigned int);
+
+        // data members
         util::Position _pos;
-        double _radius;
+        const unsigned int _radius;
     };
 }
 

@@ -10,8 +10,9 @@ namespace ty {
     public:
         PlayerShip();
         void move(const util::Position);
+        bool hit(const unsigned int);
     private:
-        unsigned int _life;
+        int _hp;
     };
 } /* namespace ty */
 
