@@ -1,6 +1,18 @@
+/**
+ * @file
+ *		SFML class for an EnemyShip.
+ * @author
+ *		Olivier Brewaeys
+ *
+ *  This class sets up a SFML sprite for an enemyship.
+ */
+
 #include "EnemyShip.h"
 
 namespace tysfml {
+    /**
+     * Enemyship ctor.
+     */
     EnemyShip::EnemyShip()
     {
         loadTexture();
@@ -8,6 +20,9 @@ namespace tysfml {
         _sprite.setPosition(_pos._x, _pos._y);
     }
 
+    /**
+     * Load the enemyship texture from file.
+     */
     void EnemyShip::loadTexture()
     {
         try
@@ -24,6 +39,10 @@ namespace tysfml {
         }
     }
 
+    /**
+     * Return enemyship sprite.
+     * @return   The sprite of the enemyship.
+     */
     const sf::Sprite& EnemyShip::getSprite() const
     {
         return _sprite;

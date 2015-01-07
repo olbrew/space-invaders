@@ -1,6 +1,18 @@
+/**
+ * @file
+ *		SFML class for a PlayerShip.
+ * @author
+ *		Olivier Brewaeys
+ *
+ *  This class sets up a SFML sprite for a playership.
+ */
+
 #include "PlayerShip.h"
 
 namespace tysfml {
+    /**
+     * PlayerShip SFML ctor.
+     */
     PlayerShip::PlayerShip()
     {
         loadTexture();
@@ -8,6 +20,9 @@ namespace tysfml {
         _sprite.setPosition(_pos._x, _pos._y);
     }
 
+    /**
+     * Load the playership texture from its file.
+     */
     void PlayerShip::loadTexture()
     {
         try
@@ -24,6 +39,10 @@ namespace tysfml {
         }
     }
 
+    /**
+     * Return playership sprite.
+     * @return   The sprite of the playership.
+     */
     const sf::Sprite& PlayerShip::getSprite() const
     {
         return _sprite;

@@ -34,6 +34,7 @@ namespace util
            assert(l.size() == 2);
 
            _x = *(l.begin());
-           _y = *(l.end());
+           // some fancy pointer arithmetic
+           _y = *(l.end() - 1);
     }
 }

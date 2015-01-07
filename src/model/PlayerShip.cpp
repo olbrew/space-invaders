@@ -4,9 +4,9 @@
  * @author
  *		Olivier Brewaeys
  *
- *	In this version of the game, a playership is spawn at the center 
- *	of the bottom of the screen. It can only move sideways to dodge 
- *	bullets or enemyships. It can shoot bullets itself to try to 
+ *	In this version of the game, a playership is spawn at the center
+ *	of the bottom of the screen. It can only move sideways to dodge
+ *	bullets or enemyships. It can shoot bullets itself to try to
  *	destroy enemyShips and increase the players score.
  */
 
