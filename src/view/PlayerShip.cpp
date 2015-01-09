@@ -31,7 +31,7 @@ namespace tysfml {
         try
         {
             if (!_texture.loadFromFile("../resources/img/playership.png",
-                                        sf::IntRect(49, 140, 21, 17)))
+                                        sf::IntRect(49, 140, 21, 27)))
             {
                 throw std::runtime_error("Could not load PlayerShip texture from file");
             }
