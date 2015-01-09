@@ -12,12 +12,15 @@
 namespace tysfml {
     /**
      * PlayerShip SFML ctor.
+     * Sets up sprite and texture of the ship as members,
+     * because they must each live as long the ship exists.
      */
     PlayerShip::PlayerShip()
     {
         loadTexture();
         _sprite.setTexture(_texture);
-        _sprite.setPosition(_pos._x, _pos._y);
+        // world is modeled on a 32x24 size.
+        _sprite.setPosition(_pos._x * 10, _pos._y * 10);
     }
 
     /**

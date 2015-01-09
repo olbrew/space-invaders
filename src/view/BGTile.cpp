@@ -5,7 +5,7 @@ namespace tysfml {
     {
         loadTexture();
         _sprite.setTexture(_texture);
-        _sprite.setTextureRect(sf::IntRect(0, 0, 800, 600));
+        _sprite.setTextureRect(sf::IntRect(0, 0, 320, 240));
     }
 
     void BGTile::loadTexture()

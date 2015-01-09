@@ -11,9 +11,10 @@ namespace tysfml {
     {
     public:
         BGTile();
-        void loadTexture();
         const sf::Sprite& getSprite() const;
     private:
+        void loadTexture();
+
         sf::Texture _texture;
         sf::Sprite _sprite;
     };

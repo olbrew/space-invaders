@@ -19,7 +19,7 @@ namespace ty
      * Creates a playership at the center, downside of the world
      * with a given radius and life/hitpoints.
      */
-    PlayerShip::PlayerShip(): Entity({400, 500}, 75), _hp(10) {}
+    PlayerShip::PlayerShip(): Entity({16, 20}, 2), _hp(10) {}
 
     /**
      * Move playership to a new position.

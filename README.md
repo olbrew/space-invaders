@@ -1,6 +1,17 @@
 TYRIAN
 ======
 
+Todo
+----
+<!-- Remove this when delivering project. -->
+In order of importance/ urgency:
+
+1. Let entities move on window
+2. Spaceships create bullets / shooting
+3. Collision control
+4. Check documentation
+5. Check for public functions which could be private
+
 Brief
 -----
 This project implements the arcade game Tyrian in the C++ language with

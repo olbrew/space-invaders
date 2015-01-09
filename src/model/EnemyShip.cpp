@@ -21,16 +21,16 @@ namespace ty
      * The starting y-coordinate is always 0.
      * The enemyship also has a radius and life/hitpoints.
      */
-    EnemyShip::EnemyShip(): Entity(50), _hp(5)
+    EnemyShip::EnemyShip(): Entity(1), _hp(5)
     {
         // create random x-coordinate for our world.
         std::random_device rd;
         std::mt19937 generator(rd());
-        // rand-value determines middle of ship with width 50.
-        std::uniform_int_distribution<> rand(25, 775);
+        std::uniform_int_distribution<> rand(1, 31);
         const unsigned int randomX = rand(generator);
-        // we can't use move here, because the assert that we can only
-        // stay on 1 x-coordinate would trigger.
+        // we can't use move here, because of the assert that we can only
+        // stay on 1 x-coordinate would fail this. This is only needed to
+        // initalise the ships location.
         _pos = {randomX, 0};
     }
 

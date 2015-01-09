@@ -2,12 +2,12 @@
 #define WORLD_H
 
 #include "Entity.h"
-#include <stack>
-#include <memory>
 #include "BGTile.h"
 #include "PlayerShip.h"
 #include "EnemyShip.h"
 #include "Bullet.h"
+#include <stack>
+#include <memory>
 
 namespace ty
 {
@@ -15,9 +15,10 @@ namespace ty
     {
     public:
         World();
-        void move(const util::Position);
         void score(const int);
     private:
+        void move(const util::Position);
+
         std::stack<std::shared_ptr<Entity>> _worldEntities;
         unsigned int _score;
     };

@@ -6,7 +6,7 @@ namespace tysfml
      * Window ctor.
      * Sets up SFML Window.
      */
-    Window::Window(): _window(sf::VideoMode(800, 600), "Tyrian",
+    Window::Window(): _window(sf::VideoMode(320, 240), "Tyrian",
                                   sf::Style::Titlebar | sf::Style::Close) {}
 
     /**

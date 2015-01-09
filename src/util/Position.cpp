@@ -31,10 +31,11 @@ namespace util
      */
     Position::Position(std::initializer_list<unsigned int> l)
     {
-           assert(l.size() == 2);
+        assert(l.size() == 2);
+        assert(*(l.begin() + 1) == *(l.end() - 1));
 
-           _x = *(l.begin());
-           // some fancy pointer arithmetic
-           _y = *(l.end() - 1);
+        _x = *(l.begin());
+        // some fancy pointer arithmetic
+        _y = *(l.begin() + 1);
     }
 }

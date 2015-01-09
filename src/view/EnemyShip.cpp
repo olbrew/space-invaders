@@ -17,7 +17,7 @@ namespace tysfml {
     {
         loadTexture();
         _sprite.setTexture(_texture);
-        _sprite.setPosition(_pos._x, _pos._y);
+        _sprite.setPosition(_pos._x * 10, _pos._y * 10);
     }
 
     /**
