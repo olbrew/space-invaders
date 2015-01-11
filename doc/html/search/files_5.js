@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['playership_2ecpp',['PlayerShip.cpp',['../model_2_player_ship_8cpp.html',1,'']]],
-  ['playership_2ecpp',['PlayerShip.cpp',['../view_2_player_ship_8cpp.html',1,'']]],
-  ['position_2ecpp',['Position.cpp',['../_position_8cpp.html',1,'']]]
+  ['stopwatch_2ecpp',['Stopwatch.cpp',['../_stopwatch_8cpp.html',1,'']]]
 ];

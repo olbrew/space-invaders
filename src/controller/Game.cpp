@@ -1,12 +1,13 @@
 /**
  * @file
- *      Contains pointer to one world and holds the game state.
+ *      Main controller which runs the game loop.
  * @author
  *      Olivier Brewaeys
  *
  * Every level can be seen as one game and its corresponding world.
  * This class also holds the game state, like the elapsed time and
  * delegates user requests to the model and updates the view.
+ * It is the main controller function and runs the main/game loop.
  */
 
 #include "Game.h"

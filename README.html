@@ -1,17 +1,6 @@
 <h1 id="tyrian">TYRIAN</h1>
-<h2 id="todo">Todo</h2>
-<!-- Remove this when delivering project. -->
-<p>In order of importance/ urgency:</p>
-<ol style="list-style-type: decimal">
-<li>Let entities move on window</li>
-<li>Spaceships create bullets / shooting</li>
-<li>Collision control</li>
-<li>Check documentation</li>
-<li>Check for public functions which could be private</li>
-<li>Factory pattern instead of ctors</li>
-</ol>
 <h2 id="brief">Brief</h2>
-<p>This project implements the arcade game Tyrian in the C++ language with modern constructs from the c++11 standard. It hopes to achieve modularity by implementing it in different stand-alone libraries. For more info on the design reconsiderations see under the Design title.</p>
+<p>This project implements the arcade game Tyrian in the C++ language with modern constructs from the c++11 standard. It hopes to achieve modularity by implementing it in different stand-alone libraries. For more info on the design reconsiderations see under the Design subsection.</p>
 <h2 id="install">Install</h2>
 <p>In Tyrian root directory:</p>
 <pre><code>[rm build]
@@ -19,30 +8,47 @@ mkdir build &amp;&amp; cd build
 cmake ..
 make
 make install</code></pre>
-<p>You will now have an executable you can run in the bin directory. You should run it from the Terminal to avoid problems with the binary locating its resources.</p>
+<p>You will now have an executable you can run in the bin directory. You should run the executable from your terminal in one of the following paths to avoid problems with the binary locating its resources.</p>
 <ul>
 <li>From <code>build</code> dir: <code>../bin/Tyrian</code></li>
 <li>From <code>bin</code> dir: <code>./Tyrian</code></li>
 </ul>
+<h2 id="playing">Playing</h2>
+<ul>
+<li>Enter starts playing the game.</li>
+<li>Escape or when the focus is lost automatically pauses the game.
+<ul>
+<li>Can be resumed again with enter.</li>
+</ul></li>
+<li>Left and Right arrow move the Player's ship.</li>
+<li>Up and Down respectively speeds up or slowns down time.</li>
+<li>Space shoots a bullet.</li>
+</ul>
 <h2 id="design">Design</h2>
 <ul>
-<li>Composite design pattern</li>
-<li>Model-View-Controller</li>
-<li>One game object, controls the model and so the view syncs with the model.
+<li>Logical separation of the libraries according to MVC-pattern.
 <ul>
-<li>Game has pointer to world object with all its entities. Manipulates it through time and player input (Stopwatch and Keyboard classes.)</li>
-<li>The view (Window class) also has a pointer to the world and updates itself (the SFML output) whenever the model changes.</li>
+<li>Model holds the world and the state of the objects.</li>
+<li>View displays the model: SFML objects derived from their model counterparts.</li>
+<li>Controller controls former components through user-input through the keyboard and keeps time with the singleton Stopwatch class.</li>
+</ul></li>
+<li>Game class is the main controller and also holds the main/game loop.</li>
+<li>Composite design pattern
+<ul>
+<li>World holds container pointers to entities. Through polymorphism the right virtual function is called at runtime.</li>
 </ul></li>
 <li>Try to limit memory consumption through extensive use of pointers and references.
 <ul>
 <li>Always pass user-defined and STL types by reference if possible.</li>
 <li>If not possible use smart pointers.
 <ul>
-<li>Smart pointers -&gt; Effectively eliminate whole family of memory-related bugs at no (<code>unique_ptr</code>) or minimal (<code>shared_ptr</code>) effect on perfomance.</li>
-<li>Tried to use unique_ptr's where applicable, but <code>make_unique</code> is only present in C++14 and apparently cmake doesn't support C++14 yet, so I left it out.</li>
+<li>Smart pointers -&gt; Effectively eliminate whole family of memory-related bugs with no (<code>unique_ptr</code>) or minimal (<code>shared_ptr</code>) effect on perfomance.</li>
+<li>Tried to use unique_ptr's where applicable, but <code>make_unique</code> is only present in C++14 and apparently cmake doesn't support C++14 yet, so I couldn't use it for this project. I know, it is possible to use <code>new</code> instead but I also made the choice based on time, as it is just easier to work with a shared_ptr. If given more time I could figure out, which pointers only would need one owner at a time</li>
 </ul></li>
 </ul></li>
-<li>Deque for performant insert and deletes at end of queue</li>
+<li>Deque for performant insert and deletes at end of queue, used as container for the entities. Stack would've made sense as the first objects to be created should live the longest (Eg. BGTile, PlayerShip) and the later created objects are destroyed first (Eg. Enemyship, Bullet). But since a stack doesn't implement iterators to easily loop over it and a stack is actually a limited implementation of a deque, this works as well.</li>
+<li>I couldn't figure out what the use would be for a singleton Keyboard class, seeing as the SFML Keyboard keycheck function is a static one.</li>
+<li>Tried as much as possible to use const functions where applicable because while it can be a hassle in the beginning, it pays off later when it enforces const-correctnes and avoid bugs.</li>
 <li>In view library, textures are loaded through textureloader class when their corresponding objects are first made and then popped onto a textures stack member, because they have to exist as long as their corresponding sprites exist.</li>
 </ul>
 <div class="figure">

@@ -121,6 +121,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (con
 <tr class="memitem:ad9724b7f01e3231c247a1d1fdeabcfd1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classutil_1_1_position.html">util::Position</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classty_1_1_entity.html#ad9724b7f01e3231c247a1d1fdeabcfd1">getPos</a> () const </td></tr>
 <tr class="memdesc:ad9724b7f01e3231c247a1d1fdeabcfd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the position of the entity.  <a href="#ad9724b7f01e3231c247a1d1fdeabcfd1">More...</a><br /></td></tr>
 <tr class="separator:ad9724b7f01e3231c247a1d1fdeabcfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a27713683e29d53b74a499e1ee4ab9"><td class="memItemLeft" align="right" valign="top">virtual const sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classty_1_1_entity.html#a80a27713683e29d53b74a499e1ee4ab9">getSprite</a> () const </td></tr>
+<tr class="memdesc:a80a27713683e29d53b74a499e1ee4ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty definition of getSprite function for derived SFML-classes.  <a href="#a80a27713683e29d53b74a499e1ee4ab9">More...</a><br /></td></tr>
+<tr class="separator:a80a27713683e29d53b74a499e1ee4ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -143,6 +146,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:abbbd6b51554ffbe2bffb035f37d0a719"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbbd6b51554ffbe2bffb035f37d0a719"></a>
 const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>_radius</b></td></tr>
 <tr class="separator:abbbd6b51554ffbe2bffb035f37d0a719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9bcd922b599f99e145613f632d1ca27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9bcd922b599f99e145613f632d1ca27"></a>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>_sprite</b></td></tr>
+<tr class="separator:ac9bcd922b599f99e145613f632d1ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab439c99739edd4bde82ab74f34782832"></a>
@@ -240,6 +246,35 @@ const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>_radius
 
 </div>
 </div>
+<a class="anchor" id="a80a27713683e29d53b74a499e1ee4ab9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Sprite &amp; ty::Entity::getSprite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty definition of getSprite function for derived SFML-classes. </p>
+<dl class="section return"><dt>Returns</dt><dd>an empty sprite</dd></dl>
+<p>Getsprite functions is needed for SFML-classes. Because we keep the objects of these classes in a container of pointers to Entities according to the composite design pattern. To call the getSprite function on entities, it must be implemented in its base class. We have to include, and thereby break a little the decoupling between the model and view, the SFML Graphics lib to be able to return a Sprite. If this function was made pure virtual we would have to implement it in this way in all it's non SFML subclasses as well, so this seems to me the lessest of evils. It is'nt perfect code, but it works. </p>
+
+<p>Reimplemented in <a class="el" href="classtysfml_1_1_bullet.html#ae33bf85118be5608fec2d2d09593aba3">tysfml::Bullet</a>, <a class="el" href="classtysfml_1_1_enemy_ship.html#ab221700a0cd3d3438494a11602adb4f8">tysfml::EnemyShip</a>, <a class="el" href="classtysfml_1_1_b_g_tile.html#a81caf5b0576f82e0a99555c5fbf0da0b">tysfml::BGTile</a>, and <a class="el" href="classtysfml_1_1_player_ship.html#a71db03ea20de256f828f097d4bc01769">tysfml::PlayerShip</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/model/<a class="el" href="_entity_8h_source.html">Entity.h</a></li>
 <li>src/model/<a class="el" href="_entity_8cpp.html">Entity.cpp</a></li>
@@ -247,7 +282,7 @@ const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>_radius
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2015 12:43:16 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 11 2015 22:26:25 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

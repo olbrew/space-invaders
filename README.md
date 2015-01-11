@@ -19,11 +19,20 @@ In Tyrian root directory:
     make install
 
 You will now have an executable you can run in the bin directory.
-You should run it from the Terminal to avoid problems with the binary
-locating its resources.
+You should run the executable from your terminal in one of the following paths
+to avoid problems with the binary locating its resources.
 
 * From `build` dir: `../bin/Tyrian`
 * From `bin` dir: `./Tyrian`
+
+Playing
+-------
+* Enter starts playing the game.
+* Escape or when the focus is lost automatically pauses the game.
+    * Can be resumed again with enter.
+* Left and Right arrow move the Player's ship.
+* Up and Down respectively speeds up or slowns down time.
+* Space shoots a bullet.
 
 Design
 ------
@@ -50,7 +59,12 @@ Design
         based on time, as it is just easier to work with a shared_ptr.
         If given more time I could figure out, which pointers only would need
         one owner at a time
-* Deque for performant insert and deletes at end of queue
+* Deque for performant insert and deletes at end of queue, used as container
+for the entities. Stack would've made sense as the first objects to be created
+    should live the longest (Eg. BGTile, PlayerShip) and the later created
+    objects are destroyed first (Eg. Enemyship, Bullet).
+    But since a stack doesn't implement iterators to easily loop over it and a
+    stack is actually a limited implementation of a deque, this works as well.
 * I couldn't figure out what the use would be for a singleton Keyboard class,
   seeing as the SFML Keyboard keycheck function is a static one.
 * Tried as much as possible to use const functions where applicable because

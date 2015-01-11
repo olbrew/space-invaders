@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ewindow',['~Window',['../classtysfml_1_1_window.html#a9735bf4736badc659100376567ba88eb',1,'tysfml::Window']]]
+  ['window',['Window',['../classtysfml_1_1_window.html#a82a8963825a2f4a35295d793fa36ef82',1,'tysfml::Window']]]
 ];

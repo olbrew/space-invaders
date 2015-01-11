@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../model/World.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../view/Window.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Stopwatch.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Keyboard.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
@@ -109,21 +109,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classty_1_1_game.html#a75c471e2f6039cee1847b74185075039">start</a>();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classty_1_1_game.html#a8a7eeb272a18e84039751fc280a86160">playDefaultLevel</a>();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        std::queue&lt;std::shared_ptr&lt;World&gt;&gt; _levels;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::shared_ptr&lt;tysfml::Window&gt; _window;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <span class="comment">/* namespace ty */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="namespacety_html"><div class="ttname"><a href="namespacety.html">ty</a></div><div class="ttdef"><b>Definition:</b> Game.cpp:14</div></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">bool</span> _paused;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::queue&lt;std::shared_ptr&lt;World&gt;&gt; _levels;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::shared_ptr&lt;World&gt; _currentLvl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::shared_ptr&lt;tysfml::Window&gt; _window;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <span class="comment">/* namespace ty */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespacety_html"><div class="ttname"><a href="namespacety.html">ty</a></div><div class="ttdef"><b>Definition:</b> Game.cpp:15</div></div>
 <div class="ttc" id="classty_1_1_game_html"><div class="ttname"><a href="classty_1_1_game.html">ty::Game</a></div><div class="ttdef"><b>Definition:</b> Game.h:12</div></div>
-<div class="ttc" id="classty_1_1_game_html_a8a7eeb272a18e84039751fc280a86160"><div class="ttname"><a href="classty_1_1_game.html#a8a7eeb272a18e84039751fc280a86160">ty::Game::playDefaultLevel</a></div><div class="ttdeci">void playDefaultLevel()</div><div class="ttdoc">Plays the default level. </div><div class="ttdef"><b>Definition:</b> Game.cpp:42</div></div>
-<div class="ttc" id="classty_1_1_game_html_a75c471e2f6039cee1847b74185075039"><div class="ttname"><a href="classty_1_1_game.html#a75c471e2f6039cee1847b74185075039">ty::Game::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the game and the game timer. </div><div class="ttdef"><b>Definition:</b> Game.cpp:28</div></div>
-<div class="ttc" id="classty_1_1_game_html_ac39849c68e423f7f4d81837c0737d9fe"><div class="ttname"><a href="classty_1_1_game.html#ac39849c68e423f7f4d81837c0737d9fe">ty::Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">Creates a game with a world object and a drawer of the world. </div><div class="ttdef"><b>Definition:</b> Game.cpp:22</div></div>
+<div class="ttc" id="classty_1_1_game_html_a8a7eeb272a18e84039751fc280a86160"><div class="ttname"><a href="classty_1_1_game.html#a8a7eeb272a18e84039751fc280a86160">ty::Game::playDefaultLevel</a></div><div class="ttdeci">void playDefaultLevel()</div><div class="ttdoc">Plays the default level. </div><div class="ttdef"><b>Definition:</b> Game.cpp:63</div></div>
+<div class="ttc" id="classty_1_1_game_html_a75c471e2f6039cee1847b74185075039"><div class="ttname"><a href="classty_1_1_game.html#a75c471e2f6039cee1847b74185075039">ty::Game::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the game and the game timer. </div><div class="ttdef"><b>Definition:</b> Game.cpp:29</div></div>
+<div class="ttc" id="classty_1_1_game_html_ac39849c68e423f7f4d81837c0737d9fe"><div class="ttname"><a href="classty_1_1_game.html#ac39849c68e423f7f4d81837c0737d9fe">ty::Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">Creates a game with a world object and a drawer of the world. </div><div class="ttdef"><b>Definition:</b> Game.cpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2015 12:43:16 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 11 2015 22:26:25 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

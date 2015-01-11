@@ -105,12 +105,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9735bf4736badc659100376567ba88eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtysfml_1_1_window.html#a9735bf4736badc659100376567ba88eb">~Window</a> ()</td></tr>
 <tr class="memdesc:a9735bf4736badc659100376567ba88eb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtysfml_1_1_window.html">Window</a> dtor.  <a href="#a9735bf4736badc659100376567ba88eb">More...</a><br /></td></tr>
 <tr class="separator:a9735bf4736badc659100376567ba88eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8e8903195de45515fb0eabfbd2d6f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtysfml_1_1_window.html#ad8e8903195de45515fb0eabfbd2d6f31">show</a> ()</td></tr>
-<tr class="memdesc:ad8e8903195de45515fb0eabfbd2d6f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the window and contains the main loop.  <a href="#ad8e8903195de45515fb0eabfbd2d6f31">More...</a><br /></td></tr>
-<tr class="separator:ad8e8903195de45515fb0eabfbd2d6f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf1f72288ae66d0291f75af6c037cfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf1f72288ae66d0291f75af6c037cfa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>toggleState</b> ()</td></tr>
-<tr class="separator:a0bf1f72288ae66d0291f75af6c037cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac94f78480aa04a65fff52b045e8ab967"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::RenderWindow &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtysfml_1_1_window.html#ac94f78480aa04a65fff52b045e8ab967">get</a> ()</td></tr>
+<tr class="memdesc:ac94f78480aa04a65fff52b045e8ab967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the actual SFML window.  <a href="#ac94f78480aa04a65fff52b045e8ab967">More...</a><br /></td></tr>
+<tr class="separator:ac94f78480aa04a65fff52b045e8ab967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96528662bea56522938cdb0372059e98"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96528662bea56522938cdb0372059e98"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtysfml_1_1_window.html#a96528662bea56522938cdb0372059e98">drawMenu</a> ()</td></tr>
+<tr class="memdesc:a96528662bea56522938cdb0372059e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the menu on the SFML window. <br /></td></tr>
+<tr class="separator:a96528662bea56522938cdb0372059e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad957681f52387f9bf2b46f2f4765f934"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad957681f52387f9bf2b46f2f4765f934"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setupWorld</b> ()</td></tr>
+<tr class="separator:ad957681f52387f9bf2b46f2f4765f934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9658ddfc7b68a3a047018be4b114fa46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9658ddfc7b68a3a047018be4b114fa46"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtysfml_1_1_window.html#a9658ddfc7b68a3a047018be4b114fa46">drawWorld</a> ()</td></tr>
+<tr class="memdesc:a9658ddfc7b68a3a047018be4b114fa46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the entities of the world, and thus the world itself on the SFML window. <br /></td></tr>
+<tr class="separator:a9658ddfc7b68a3a047018be4b114fa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a82a8963825a2f4a35295d793fa36ef82"></a>
@@ -150,12 +158,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>toggleState</b> ()</t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad8e8903195de45515fb0eabfbd2d6f31"></a>
+<a class="anchor" id="ac94f78480aa04a65fff52b045e8ab967"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tysfml::Window::show </td>
+          <td class="memname">std::shared_ptr&lt; sf::RenderWindow &gt; tysfml::Window::get </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -163,19 +171,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>toggleState</b> ()</t
       </table>
 </div><div class="memdoc">
 
-<p>Draws the window and contains the main loop. </p>
-<p>All the actual drawing of the entitites by SFML happens in this function. In the main or game loop between the window clear and display function, all our entities get drawn. </p>
+<p>Returns a pointer to the actual SFML window. </p>
+<dl class="section return"><dt>Returns</dt><dd>the SFML window. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/view/<a class="el" href="_window_8h_source.html">Window.h</a></li>
-<li>src/view/Window.cpp</li>
+<li>src/view/<a class="el" href="_window_8cpp.html">Window.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2015 12:43:16 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 11 2015 22:26:25 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

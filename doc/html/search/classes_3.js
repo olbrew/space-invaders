@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyboard',['Keyboard',['../classty_1_1_keyboard.html',1,'ty']]]
+  ['menu',['Menu',['../classtysfml_1_1_menu.html',1,'tysfml']]]
 ];

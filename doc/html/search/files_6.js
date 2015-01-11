@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['stopwatch_2ecpp',['Stopwatch.cpp',['../_stopwatch_8cpp.html',1,'']]]
+  ['window_2ecpp',['Window.cpp',['../_window_8cpp.html',1,'']]],
+  ['world_2ecpp',['World.cpp',['../_world_8cpp.html',1,'']]]
 ];
