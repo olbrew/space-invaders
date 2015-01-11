@@ -74,6 +74,9 @@ for the entities. Stack would've made sense as the first objects to be created
   corresponding objects are first made and then popped onto a textures stack
   member, because they have to exist as long as their corresponding sprites
   exist.
+* Member functions of classes are made private by default and only when
+  necessary put in the public scope. This strengthens encapsulation.
+* For more detailed information see `doc/html/index.html`
 
 ![Class Hierarchy](doc/hierarchy.png)
 

@@ -14,8 +14,10 @@ namespace ty {
     public:
         Game();
         void start();
-        void playDefaultLevel();
     private:
+        void playDefaultLevel();
+        void pollEvents();
+
         bool _paused;
         std::queue<std::shared_ptr<World>> _levels;
         std::shared_ptr<World> _currentLvl;

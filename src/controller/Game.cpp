@@ -31,27 +31,35 @@ namespace ty
         tysfml::Stopwatch::getStopwatch();
         while (_window->get()->isOpen())
         {
-            sf::Event event;
-            while (_window->get()->pollEvent(event))
-            {
-                if (event.type == sf::Event::Closed)
-                    _window->get()->close();
-                if (event.type == sf::Event::LostFocus)
-                    _paused = true;
-                if (event.type == sf::Event::KeyPressed)
-                    if ((event.key.code == sf::Keyboard::Return) && _paused)
-                        playDefaultLevel();
-                    if (!_paused)
-                        if ((event.key.code == sf::Keyboard::Escape) && !_paused)
-                            _paused = true;
-                        //if (event.key.code == sf::Keyboard::Left)
-            }
+            pollEvents();
             _window->get()->clear();
             if (_paused)
                 _window->drawMenu();
             else
                 _window->drawWorld();
             _window->get()->display();
+        }
+    }
+
+    /**
+     * Polls for user input events on the windwo
+     */
+    void Game::pollEvents()
+    {
+        sf::Event event;
+        while (_window->get()->pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                _window->get()->close();
+            if (event.type == sf::Event::LostFocus)
+                _paused = true;
+            if (event.type == sf::Event::KeyPressed)
+                if ((event.key.code == sf::Keyboard::Return) && _paused)
+                    playDefaultLevel();
+            if (!_paused)
+                if ((event.key.code == sf::Keyboard::Escape) && !_paused)
+                    _paused = true;
+            //if (event.key.code == sf::Keyboard::Left)
         }
     }
 
