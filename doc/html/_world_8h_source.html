@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;PlayerShip.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;EnemyShip.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Bullet.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;deque&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacety.html">ty</a></div>
@@ -108,24 +108,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classty_1_1_world.html">World</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span> score(<span class="keyword">const</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> move(<span class="keyword">const</span> <a class="code" href="classutil_1_1_position.html">util::Position</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::stack&lt;std::shared_ptr&lt;Entity&gt;&gt; _worldEntities;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _score;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classty_1_1_world.html#a92b002c5b85e655715b7097afdf4c49d">score</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        std::shared_ptr&lt;PlayerShip&gt; <a class="code" href="classty_1_1_world.html#a76645c16dd396a26875fb60f15c5f80a">getPS</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::deque&lt;std::shared_ptr&lt;Entity&gt;&gt; getEntities();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> move(<span class="keyword">const</span> <a class="code" href="classutil_1_1_position.html">util::Position</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::deque&lt;std::shared_ptr&lt;Entity&gt;&gt; _worldEntities;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::shared_ptr&lt;PlayerShip&gt; _ps;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _score;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classutil_1_1_position_html"><div class="ttname"><a href="classutil_1_1_position.html">util::Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:9</div></div>
 <div class="ttc" id="namespacety_html"><div class="ttname"><a href="namespacety.html">ty</a></div><div class="ttdef"><b>Definition:</b> Game.cpp:15</div></div>
+<div class="ttc" id="classty_1_1_world_html_a92b002c5b85e655715b7097afdf4c49d"><div class="ttname"><a href="classty_1_1_world.html#a92b002c5b85e655715b7097afdf4c49d">ty::World::score</a></div><div class="ttdeci">void score(const int)</div><div class="ttdoc">Change score in this particular level. </div><div class="ttdef"><b>Definition:</b> World.cpp:43</div></div>
 <div class="ttc" id="classty_1_1_entity_html"><div class="ttname"><a href="classty_1_1_entity.html">ty::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:9</div></div>
+<div class="ttc" id="classty_1_1_world_html_a76645c16dd396a26875fb60f15c5f80a"><div class="ttname"><a href="classty_1_1_world.html#a76645c16dd396a26875fb60f15c5f80a">ty::World::getPS</a></div><div class="ttdeci">std::shared_ptr&lt; PlayerShip &gt; getPS() const </div><div class="ttdoc">Return pointer to the playership of this world. </div><div class="ttdef"><b>Definition:</b> World.cpp:54</div></div>
 <div class="ttc" id="classty_1_1_world_html"><div class="ttname"><a href="classty_1_1_world.html">ty::World</a></div><div class="ttdef"><b>Definition:</b> World.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2015 22:26:25 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 11 2015 23:57:54 for Tyrian by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
