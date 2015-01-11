@@ -51,15 +51,20 @@ namespace ty
         {
             if (event.type == sf::Event::Closed)
                 _window->get()->close();
-            if (event.type == sf::Event::LostFocus)
-                _paused = true;
             if (event.type == sf::Event::KeyPressed)
                 if ((event.key.code == sf::Keyboard::Return) && _paused)
                     playDefaultLevel();
-            if (!_paused)
-                if ((event.key.code == sf::Keyboard::Escape) && !_paused)
-                    _paused = true;
-            //if (event.key.code == sf::Keyboard::Left)
+                if (!_paused)
+                    if (event.type == sf::Event::LostFocus)
+                        _paused = true;
+                    if (event.key.code == sf::Keyboard::Escape)
+                        _paused = true;
+                    /** Work in progress
+                    if (event.key.code == sf::Keyboard::Left)
+                        _currentLvl->getPS()->moveOffset(-2);
+                    if (event.key.code == sf::Keyboard::Right)
+                        _currentLvl->getPS()->moveOffset(2);
+                        */
         }
     }
 

@@ -2,6 +2,7 @@
 #define WINDOW_H_
 
 #include "../model/Entity.h"
+#include "../model/World.h"
 #include "BGTile.h"
 #include "PlayerShip.h"
 #include "EnemyShip.h"
@@ -21,6 +22,7 @@ namespace tysfml
         std::shared_ptr<sf::RenderWindow> get();
         void drawMenu();
         void setupWorld();
+        void betterSetup(std::shared_ptr<ty::World>);
         void drawWorld();
     private:
         std::shared_ptr<Menu> _menu;

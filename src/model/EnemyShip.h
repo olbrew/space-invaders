@@ -13,7 +13,7 @@ namespace ty
         EnemyShip();
         void move(const util::Position);
         bool hit(const unsigned int);
-        //TODO bool shoot();
+        void shoot();
     private:
         int _hp;
     };

@@ -51,6 +51,11 @@ namespace tysfml
         _sfmlEntities.push_back(std::make_shared<EnemyShip>());
     }
 
+    void Window::betterSetup(std::shared_ptr<ty::World> world)
+    {
+        _sfmlEntities = world->getEntities();
+    }
+
     /**
      * Draws the entities of the world, and thus the world itself
      * on the SFML window.

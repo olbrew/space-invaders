@@ -1,13 +1,13 @@
 /**
  * @file
- *		Defines a PlayerShip
+ *      Defines a PlayerShip
  * @author
- *		Olivier Brewaeys
+ *      Olivier Brewaeys
  *
- *	In this version of the game, a playership is spawn at the center
- *	of the bottom of the screen. It can only move sideways to dodge
- *	bullets or enemyships. It can shoot bullets itself to try to
- *	destroy enemyShips and increase the players score.
+ *  In this version of the game, a playership is spawn at the center
+ *  of the bottom of the screen. It can only move sideways to dodge
+ *  bullets or enemyships. It can shoot bullets itself to try to
+ *  destroy enemyShips and increase the players score.
  */
 
 #include "PlayerShip.h"
@@ -19,7 +19,10 @@ namespace ty
      * Creates a playership at the center, downside of the world
      * with a given radius and life/hitpoints.
      */
-    PlayerShip::PlayerShip(): Entity({16, 20}, 2), _hp(10) {}
+    PlayerShip::PlayerShip(): Entity(
+    {
+        16, 20
+    }, 2), _hp(10) {}
 
     /**
      * Move playership to a new position.
@@ -35,6 +38,16 @@ namespace ty
     }
 
     /**
+     * Move playership in regards to its current position
+     * @param   offset     The amount of space playership must move on the
+     * horizontal axis.
+     */
+    void PlayerShip::moveOffset(const int offset)
+    {
+            move({_pos._x + offset, _pos._y}); 
+    }
+
+    /**
      * Reduces PlayerShips' life and returns true when dead.
      * @param   hp     The amount of hp to decrease with.
      * @return  returns true when playership dies and false when it stays alive.
@@ -47,5 +60,11 @@ namespace ty
         }
         _hp -= hp;
         return false;
+    }
+
+    void PlayerShip::shoot()
+    {
+        // TODO find a way to wrap `this` in a shared_ptr
+        //Bullet bullet(this);
     }
 }

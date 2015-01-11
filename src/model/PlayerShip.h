@@ -2,6 +2,7 @@
 #define PLAYERSHIP_H
 
 #include "Entity.h"
+#include "Bullet.h"
 #include <cassert>
 
 namespace ty {
@@ -10,7 +11,9 @@ namespace ty {
     public:
         PlayerShip();
         void move(const util::Position);
+        void moveOffset(const int offset);
         bool hit(const unsigned int);
+        void shoot();
     private:
         int _hp;
     };
