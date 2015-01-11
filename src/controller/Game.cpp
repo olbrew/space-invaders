@@ -19,16 +19,22 @@ namespace ty
      * level is pushed onto the levels queue.
      * There is also a window created for
      */
-    Game::Game()
-    {
-    }
+    Game::Game(): _window(std::make_shared<tysfml::Window>()) {}
 
     /**
-     * Starts the game.
+     * Starts the game and the game timer.
+     * Contains the logic for running through the menus.
      */
     void Game::start()
     {
-        playDefaultLevel();
+        _window->show();
+        tysfml::Stopwatch::getStopwatch();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+        {
+            std::cout << "Oh happy day!" << std::endl;
+            playDefaultLevel();
+            _window->toggleState();
+        }
     }
 
     /**
@@ -38,8 +44,7 @@ namespace ty
     {
         std::shared_ptr<World> defaultLevel = std::make_shared<World>();
         _levels.push(defaultLevel);
-        _window = std::make_shared<tysfml::Window>();
-        _window->draw();
+        _window->toggleState();
     }
 
 } /* namespace ty */

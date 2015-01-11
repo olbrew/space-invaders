@@ -3,8 +3,11 @@
 
 #include "../model/World.h"
 #include "../view/Window.h"
+#include "Stopwatch.h"
+#include "Keyboard.h"
 #include <memory>
 #include <queue>
+#include <SFML/System.hpp>
 
 namespace ty {
     class Game
