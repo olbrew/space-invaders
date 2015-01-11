@@ -6,8 +6,10 @@
 #include "PlayerShip.h"
 #include "EnemyShip.h"
 #include "Bullet.h"
+#include "Menu.h"
 #include <SFML/Graphics.hpp>
 #include <stack>
+#include <memory>
 
 namespace tysfml
 {
@@ -16,8 +18,11 @@ namespace tysfml
     public:
         Window();
         ~Window();
-        void draw();
+        void show();
+        void toggleState();
     private:
+        bool _paused;
+        std::shared_ptr<Menu> _menu;
         sf::RenderWindow _window;
     };
 } /* namespace tysfml */
