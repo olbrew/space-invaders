@@ -1,14 +1,14 @@
 #ifndef WINDOW_H_
 #define WINDOW_H_
 
-#include "../model/World.h"
+#include "../model/Entity.h"
 #include "BGTile.h"
 #include "PlayerShip.h"
 #include "EnemyShip.h"
 #include "Bullet.h"
 #include "Menu.h"
 #include <SFML/Graphics.hpp>
-#include <stack>
+#include <deque>
 #include <memory>
 
 namespace tysfml
@@ -18,12 +18,14 @@ namespace tysfml
     public:
         Window();
         ~Window();
-        void show();
-        void toggleState();
+        std::shared_ptr<sf::RenderWindow> get();
+        void drawMenu();
+        void setupWorld();
+        void drawWorld();
     private:
-        bool _paused;
         std::shared_ptr<Menu> _menu;
-        sf::RenderWindow _window;
+        std::shared_ptr<sf::RenderWindow> _window;
+        std::deque<std::shared_ptr<ty::Entity>> _sfmlEntities;
     };
 } /* namespace tysfml */
 

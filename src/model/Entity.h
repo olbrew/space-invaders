@@ -2,6 +2,7 @@
 #define ENTITY_H_
 
 #include "../util/Position.h"
+#include <SFML/Graphics.hpp>
 
 namespace ty
 {
@@ -10,6 +11,7 @@ namespace ty
     public:
         virtual void move(const util::Position) = 0;
         const util::Position& getPos() const;
+        virtual const sf::Sprite& getSprite() const;
     protected:
         // hidden ctors
         Entity();
@@ -19,6 +21,8 @@ namespace ty
         // data members
         util::Position _pos;
         const unsigned int _radius;
+        // empty sprite to return by the virtual getSprite function
+        sf::Sprite _sprite;
     };
 }
 

@@ -1,3 +1,10 @@
+/**
+ * @file
+ *      Holds the SFML window and draws on it.
+ * @author
+ *      Olivier Brewaeys
+ */
+
 #include "Window.h"
 
 namespace tysfml
@@ -6,9 +13,9 @@ namespace tysfml
      * Window ctor.
      * Sets up SFML Window.
      */
-    Window::Window(): _paused(true), _menu(std::make_shared<Menu>()),
-        _window(sf::VideoMode(320, 240), "Tyrian",
-                sf::Style::Titlebar | sf::Style::Close) {}
+    Window::Window(): _menu(std::make_shared<Menu>()),
+        _window(std::make_shared<sf::RenderWindow>(sf::VideoMode(320, 240),
+                "Tyrian", sf::Style::Titlebar | sf::Style::Close)) {}
 
     /**
      * Window dtor.
@@ -16,56 +23,41 @@ namespace tysfml
      */
     Window::~Window()
     {
-        _window.close();
+        _window->close();
     }
 
     /**
-     * Draws the window and contains the main loop.
-     * All the actual drawing of the entitites by SFML
-     * happens in this function. In the main or game loop
-     * between the window clear and display function,
-     * all our entities get drawn.
+     * Returns a pointer to the actual SFML window.
+     * @return   the SFML window.
      */
-    void Window::show()
+    std::shared_ptr<sf::RenderWindow> Window::get()
     {
-        BGTile bgTile;
-        PlayerShip ps;
-        EnemyShip es;
-        // main loop
-        while (_window.isOpen())
-        {
-            sf::Event event;
-            while (_window.pollEvent(event))
-            {
-                if (event.type == sf::Event::Closed)
-                    _window.close();
-                if (event.type == sf::Event::KeyPressed)
-                    if (event.key.code == sf::Keyboard::Return)
-                        _paused = false;
-            }
-            _window.clear();
-            if (_paused)
-            {
-                _window.draw(_menu->getSprite());
-                _window.draw(_menu->getText());
-            }
-            else
-            {
-                _window.draw(bgTile.getSprite());
-                _window.draw(ps.getSprite());
-                _window.draw(es.getSprite());
-            }
-            _window.display();
-        }
+        return _window;
     }
 
-    void Window::toggleState()
+    /**
+     * Draws the menu on the SFML window.
+     */
+    void Window::drawMenu()
     {
-        if (_paused)
-            _paused = false;
-        else
-            _paused = true;
+        _window->draw(_menu->getSprite());
+        _window->draw(_menu->getText());
     }
 
+    void Window::setupWorld()
+    {
+        _sfmlEntities.push_back(std::make_shared<BGTile>());
+        _sfmlEntities.push_back(std::make_shared<PlayerShip>());
+        _sfmlEntities.push_back(std::make_shared<EnemyShip>());
+    }
 
+    /**
+     * Draws the entities of the world, and thus the world itself
+     * on the SFML window.
+     */
+    void Window::drawWorld()
+    {
+        for (auto ent : _sfmlEntities)
+            _window->draw(ent->getSprite());
+    }
 } /* namespace tysfml */

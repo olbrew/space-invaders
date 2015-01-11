@@ -4,10 +4,9 @@
 #include "../model/World.h"
 #include "../view/Window.h"
 #include "Stopwatch.h"
-#include "Keyboard.h"
+#include <SFML/Graphics.hpp>
 #include <memory>
 #include <queue>
-#include <SFML/System.hpp>
 
 namespace ty {
     class Game
@@ -17,7 +16,9 @@ namespace ty {
         void start();
         void playDefaultLevel();
     private:
+        bool _paused;
         std::queue<std::shared_ptr<World>> _levels;
+        std::shared_ptr<World> _currentLvl;
         std::shared_ptr<tysfml::Window> _window;
     };
 } /* namespace ty */

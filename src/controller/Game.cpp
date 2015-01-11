@@ -19,7 +19,7 @@ namespace ty
      * level is pushed onto the levels queue.
      * There is also a window created for
      */
-    Game::Game(): _window(std::make_shared<tysfml::Window>()) {}
+    Game::Game(): _paused(true), _window(std::make_shared<tysfml::Window>()) {}
 
     /**
      * Starts the game and the game timer.
@@ -27,24 +27,43 @@ namespace ty
      */
     void Game::start()
     {
-        _window->show();
         tysfml::Stopwatch::getStopwatch();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+        while (_window->get()->isOpen())
         {
-            std::cout << "Oh happy day!" << std::endl;
-            playDefaultLevel();
-            _window->toggleState();
+            sf::Event event;
+            while (_window->get()->pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    _window->get()->close();
+                if (event.type == sf::Event::LostFocus)
+                    _paused = true;
+                if (event.type == sf::Event::KeyPressed)
+                    if ((event.key.code == sf::Keyboard::Return) && _paused)
+                        playDefaultLevel();
+                    if (!_paused)
+                        if ((event.key.code == sf::Keyboard::Escape) && !_paused)
+                            _paused = true;
+                        //if (event.key.code == sf::Keyboard::Left)
+            }
+            _window->get()->clear();
+            if (_paused)
+                _window->drawMenu();
+            else
+                _window->drawWorld();
+            _window->get()->display();
         }
     }
 
     /**
      * Plays the default level.
+     * Makes a world, pushes it to the levels queue and declares the game
+     * running.
      */
     void Game::playDefaultLevel()
     {
         std::shared_ptr<World> defaultLevel = std::make_shared<World>();
+        _window->setupWorld();
         _levels.push(defaultLevel);
-        _window->toggleState();
+        _paused = false;
     }
-
 } /* namespace ty */

@@ -10,7 +10,6 @@ namespace  ty
     public:
         BGTile();
         void move(const util::Position);
-
     };
 }
 
