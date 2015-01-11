@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['enemyship',['EnemyShip',['../classty_1_1_enemy_ship.html',1,'ty']]],
-  ['enemyship',['EnemyShip',['../classtysfml_1_1_enemy_ship.html',1,'tysfml']]],
-  ['enemyship',['EnemyShip',['../classty_1_1_enemy_ship.html#af5c3160a2e2b0fa2e06415c686a13e98',1,'ty::EnemyShip']]],
-  ['enemyship_2ecpp',['EnemyShip.cpp',['../model_2_enemy_ship_8cpp.html',1,'']]],
-  ['entity',['Entity',['../classty_1_1_entity.html#ad415eebe548e656837d547bcfa5499a8',1,'ty::Entity::Entity()'],['../classty_1_1_entity.html#ab439c99739edd4bde82ab74f34782832',1,'ty::Entity::Entity(const unsigned int)'],['../classty_1_1_entity.html#a3bd5bde68e4f5f9939d82c295b53f363',1,'ty::Entity::Entity(const util::Position, const unsigned int)']]],
-  ['entity',['Entity',['../classty_1_1_entity.html',1,'ty']]],
-  ['entity_2ecpp',['Entity.cpp',['../_entity_8cpp.html',1,'']]]
+  ['game',['Game',['../classty_1_1_game.html',1,'ty']]],
+  ['game',['Game',['../classty_1_1_game.html#ac39849c68e423f7f4d81837c0737d9fe',1,'ty::Game']]],
+  ['game_2ecpp',['Game.cpp',['../_game_8cpp.html',1,'']]],
+  ['getpos',['getPos',['../classty_1_1_entity.html#ad9724b7f01e3231c247a1d1fdeabcfd1',1,'ty::Entity']]],
+  ['getsprite',['getSprite',['../classtysfml_1_1_bullet.html#ae33bf85118be5608fec2d2d09593aba3',1,'tysfml::Bullet::getSprite()'],['../classtysfml_1_1_enemy_ship.html#ab221700a0cd3d3438494a11602adb4f8',1,'tysfml::EnemyShip::getSprite()'],['../classtysfml_1_1_player_ship.html#a71db03ea20de256f828f097d4bc01769',1,'tysfml::PlayerShip::getSprite()']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['_7ewindow',['~Window',['../classtysfml_1_1_window.html#a9735bf4736badc659100376567ba88eb',1,'tysfml::Window']]]
+  ['window',['Window',['../classtysfml_1_1_window.html',1,'tysfml']]],
+  ['window',['Window',['../classtysfml_1_1_window.html#a82a8963825a2f4a35295d793fa36ef82',1,'tysfml::Window']]],
+  ['world',['World',['../classty_1_1_world.html',1,'ty']]],
+  ['world_2ecpp',['World.cpp',['../_world_8cpp.html',1,'']]]
 ];

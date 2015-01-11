@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['game',['Game',['../classty_1_1_game.html',1,'ty']]],
-  ['game',['Game',['../classty_1_1_game.html#ac39849c68e423f7f4d81837c0737d9fe',1,'ty::Game']]],
-  ['game_2ecpp',['Game.cpp',['../_game_8cpp.html',1,'']]],
-  ['getpos',['getPos',['../classty_1_1_entity.html#ad9724b7f01e3231c247a1d1fdeabcfd1',1,'ty::Entity']]]
+  ['hit',['hit',['../classty_1_1_enemy_ship.html#ada356a2a05720494db1781f3b6beb9a5',1,'ty::EnemyShip::hit()'],['../classty_1_1_player_ship.html#a0404aecea39dea5d28f2c73cabfdf546',1,'ty::PlayerShip::hit()']]]
 ];

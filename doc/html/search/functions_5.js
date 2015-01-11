@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['playdefaultlevel',['playDefaultLevel',['../classty_1_1_game.html#a8a7eeb272a18e84039751fc280a86160',1,'ty::Game']]],
-  ['playership',['PlayerShip',['../classty_1_1_player_ship.html#a5cade88e288a3e4c449e57809cc8c217',1,'ty::PlayerShip']]],
-  ['position',['Position',['../classutil_1_1_position.html#aa57723432f8b9fd8fc82f8b2e2198252',1,'util::Position::Position()'],['../classutil_1_1_position.html#a73b0c079fd2cea092a7565225ae68678',1,'util::Position::Position(const unsigned int, const unsigned int)'],['../classutil_1_1_position.html#ab30b1d1bbc0867c287b17dc822a622a5',1,'util::Position::Position(std::initializer_list&lt; unsigned int &gt;)']]]
+  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['move',['move',['../classty_1_1_b_g_tile.html#ab84578439495e53b115f197915061620',1,'ty::BGTile::move()'],['../classty_1_1_bullet.html#a6c9eef353a7f7a206d810185cb7d7298',1,'ty::Bullet::move()'],['../classty_1_1_enemy_ship.html#a1076666593657fc02efd2f7cd295d087',1,'ty::EnemyShip::move()'],['../classty_1_1_player_ship.html#a690005677d92cd7065ceb2d980aa3aa5',1,'ty::PlayerShip::move()']]]
 ];
