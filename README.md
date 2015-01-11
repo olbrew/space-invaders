@@ -11,6 +11,7 @@ In order of importance/ urgency:
 3. Collision control
 4. Check documentation
 5. Check for public functions which could be private
+6. Factory pattern instead of ctors
 
 Brief
 -----
@@ -30,6 +31,11 @@ In Tyrian root directory:
     make install
 
 You will now have an executable you can run in the bin directory.
+You should run it from the Terminal to avoid problems with the binary
+locating its resources.
+
+* From `build` dir: `../bin/Tyrian`
+* From `bin` dir: `./Tyrian`
 
 Design
 ------
@@ -55,7 +61,7 @@ Design
   member, because they have to exist as long as their corresponding sprites
   exist.
 
-#Insert UML schema here.
+![Class Hierarchy](doc/hierarchy.png)
 
 Author
 ------

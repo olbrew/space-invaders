@@ -1,0 +1,53 @@
+<h1 id="tyrian">TYRIAN</h1>
+<h2 id="todo">Todo</h2>
+<!-- Remove this when delivering project. -->
+<p>In order of importance/ urgency:</p>
+<ol style="list-style-type: decimal">
+<li>Let entities move on window</li>
+<li>Spaceships create bullets / shooting</li>
+<li>Collision control</li>
+<li>Check documentation</li>
+<li>Check for public functions which could be private</li>
+<li>Factory pattern instead of ctors</li>
+</ol>
+<h2 id="brief">Brief</h2>
+<p>This project implements the arcade game Tyrian in the C++ language with modern constructs from the c++11 standard. It hopes to achieve modularity by implementing it in different stand-alone libraries. For more info on the design reconsiderations see under the Design title.</p>
+<h2 id="install">Install</h2>
+<p>In Tyrian root directory:</p>
+<pre><code>[rm build]
+mkdir build &amp;&amp; cd build
+cmake ..
+make
+make install</code></pre>
+<p>You will now have an executable you can run in the bin directory. You should run it from the Terminal to avoid problems with the binary locating its resources.</p>
+<ul>
+<li>From <code>build</code> dir: <code>../bin/Tyrian</code></li>
+<li>From <code>bin</code> dir: <code>./Tyrian</code></li>
+</ul>
+<h2 id="design">Design</h2>
+<ul>
+<li>Composite design pattern</li>
+<li>Model-View-Controller</li>
+<li>One game object, controls the model and so the view syncs with the model.
+<ul>
+<li>Game has pointer to world object with all its entities. Manipulates it through time and player input (Stopwatch and Keyboard classes.)</li>
+<li>The view (Window class) also has a pointer to the world and updates itself (the SFML output) whenever the model changes.</li>
+</ul></li>
+<li>Try to limit memory consumption through extensive use of pointers and references.
+<ul>
+<li>Always pass user-defined and STL types by reference if possible.</li>
+<li>If not possible use smart pointers.
+<ul>
+<li>Smart pointers -&gt; Effectively eliminate whole family of memory-related bugs at no (<code>unique_ptr</code>) or minimal (<code>shared_ptr</code>) effect on perfomance.</li>
+<li>Tried to use unique_ptr's where applicable, but <code>make_unique</code> is only present in C++14 and apparently cmake doesn't support C++14 yet, so I left it out.</li>
+</ul></li>
+</ul></li>
+<li>Deque for performant insert and deletes at end of queue</li>
+<li>In view library, textures are loaded through textureloader class when their corresponding objects are first made and then popped onto a textures stack member, because they have to exist as long as their corresponding sprites exist.</li>
+</ul>
+<div class="figure">
+<img src="doc/hierarchy.png" alt="Class Hierarchy" />
+<p class="caption">Class Hierarchy</p>
+</div>
+<h2 id="author">Author</h2>
+<p>Olivier Brewaeys (s0114375)</p>
