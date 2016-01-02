@@ -1,7 +1,0 @@
-<map id="src/model/Entity.h" name="src/model/Entity.h">
-<area shape="rect" id="node2" href="$_b_g_tile_8h_source.html" title="src/model/BGTile.h" alt="" coords="5,79,140,104"/>
-<area shape="rect" id="node3" href="$_bullet_8h_source.html" title="src/model/Bullet.h" alt="" coords="163,79,291,104"/>
-<area shape="rect" id="node4" href="$_enemy_ship_8h_source.html" title="src/model/EnemyShip.h" alt="" coords="315,79,478,104"/>
-<area shape="rect" id="node5" href="$_player_ship_8h_source.html" title="src/model/PlayerShip.h" alt="" coords="501,79,660,104"/>
-<area shape="rect" id="node6" href="$_world_8h_source.html" title="src/model/World.h" alt="" coords="684,79,813,104"/>
-</map>
