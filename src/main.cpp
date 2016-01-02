@@ -13,8 +13,8 @@
  */
 int main()
 {
-    ty::Game game;
-    game.start();
+    Game game;
+    game.run();
 
     return 0;
 }

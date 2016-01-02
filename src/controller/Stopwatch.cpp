@@ -12,17 +12,14 @@
 
 #include "Stopwatch.h"
 
-namespace tysfml
+unsigned long int Stopwatch::elapsedSeconds() const
 {
-    unsigned long int Stopwatch::elapsedSeconds() const
-    {
-        sf::Time elapsed = _clock.getElapsedTime();
-        return elapsed.asSeconds();
-    }
+    sf::Time elapsed = _clock.getElapsedTime();
+    return elapsed.asSeconds();
+}
 
-    unsigned long int Stopwatch::elapsedMilliSeconds() const
-    {
-        sf::Time elapsed = _clock.getElapsedTime();
-        return elapsed.asMilliseconds();
-    }
-} /* namespace tysfml */
+unsigned long int Stopwatch::elapsedMilliSeconds() const
+{
+    sf::Time elapsed = _clock.getElapsedTime();
+    return elapsed.asMilliseconds();
+}

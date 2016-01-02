@@ -4,25 +4,32 @@
 #include "../model/World.h"
 #include "../view/Window.h"
 #include "Stopwatch.h"
+#include "Keyboard.h"
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include <queue>
+#include <iostream>
 
-namespace ty {
-    class Game
-    {
-    public:
-        Game();
-        void start();
-    private:
-        void playDefaultLevel();
-        void pollEvents();
+class Game
+{
+public:
+    Game();
+    void setup();
+    void run();
+    void update();
 
-        bool _paused;
-        std::queue<std::shared_ptr<World>> _levels;
-        std::shared_ptr<World> _currentLvl;
-        std::shared_ptr<tysfml::Window> _window;
-    };
-} /* namespace ty */
+    bool isPaused() const;
+    void resume();
+    void pause();
+private:
+    void playDefaultLevel();
+    void pollEvents();
+    void processInput(sf::Event&);
+
+    bool _paused;
+    bool _running;
+    std::shared_ptr<ty::World> _world;
+    std::shared_ptr<tysfml::Window> _window;
+};
 
 #endif

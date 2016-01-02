@@ -14,11 +14,7 @@
 namespace ty
 {
     /**
-     * @file
-     *		Creates a world with its entities.
-     * @author
-     *		Olivier Brewaeys
-     *
+     * Creates a world with its entities.
      * Must make a entity object, because Entity is an ABC.
      * But it has no special meaning in a world object, so
      * all values get initialised to 0.

@@ -1,8 +1,8 @@
 /**
  * @file
- *		Sets up the menu.
+ *      Sets up the menu.
  * @author
- *		Olivier Brewaeys
+ *      Olivier Brewaeys
  *
  * Loads background image and sets instruction text for the menu.
  */
@@ -10,57 +10,56 @@
 
 namespace tysfml
 {
-    Menu::Menu()
-    {
-        loadTexture();
-        _sprite.setTexture(_texture);
+Menu::Menu(std::shared_ptr<Window> window)
+{
+    loadTexture();
+    _sprite.setTexture(_texture);
 
-        loadFont();
-        _text.setFont(_font);
-        _text.setString("Press Enter to Play");
-        _text.setCharacterSize(26);
-        _text.setColor(sf::Color::White);
-        _text.setPosition(60, 0);
-        _text.setStyle(sf::Text::Bold);
-    }
+    loadFont();
+    sf::Text text;
+    text.setFont(_font);
+    text.setString("Press Enter to Play");
+    text.setCharacterSize(15);
+    text.setColor(sf::Color::Yellow);
+    text.setPosition(80, 220);
 
-    void Menu::loadTexture()
+    _window = window;
+}
+
+void Menu::loadTexture()
+{
+    try
     {
-        try
+        if (!_texture.loadFromFile("../resources/img/menu.gif"))
         {
-            if (!_texture.loadFromFile("../resources/img/menu.gif"))
-            {
-                throw std::runtime_error("Could not load menu texture from file");
-            }
-        }
-        catch (std::runtime_error& e)
-        {
-            std::cerr << e.what() << std::endl;
+            throw std::runtime_error("Could not load menu texture from file");
         }
     }
-
-    void Menu::loadFont()
+    catch (std::runtime_error& e)
     {
-        try
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void Menu::loadFont()
+{
+    try
+    {
+        if (!_font.loadFromFile("../resources/fonts/HelveticaNeue.dfont"))
         {
-            if (!_font.loadFromFile("../resources/fonts/HelveticaNeue.dfont"))
-            {
-                throw std::runtime_error("Could not load font from file");
-            }
-        }
-        catch (std::runtime_error& e)
-        {
-            std::cerr << e.what() << std::endl;
+            throw std::runtime_error("Could not load font from file");
         }
     }
-
-    const sf::Sprite& Menu::getSprite() const
+    catch (std::runtime_error& e)
     {
-        return _sprite;
+        std::cerr << e.what() << std::endl;
     }
+}
 
-    const sf::Text& Menu::getText() const
-    {
-        return _text;
-    }
+void Menu::draw()
+{
+    _window->getWindow()->draw(_sprite);
+    _window->getWindow()->draw(_text);
+}
+
 } /* namespace tysfml */

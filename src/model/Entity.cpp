@@ -63,7 +63,7 @@ namespace ty
      * Sprite.
      * If this function was made pure virtual we would have to implement it in
      * this way in all it's non SFML subclasses as well, so this seems to me the
-     * lessest of evils. It is'nt perfect code, but it works.
+     * lessest of evils. It isn't perfect code, but it works.
      */
     const sf::Sprite& Entity::getSprite() const {return _sprite;}
 }
