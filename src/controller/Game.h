@@ -10,8 +10,7 @@
 #include <queue>
 #include <iostream>
 
-class Game
-{
+class Game {
 public:
     Game();
     void setup();
@@ -21,6 +20,7 @@ public:
     bool isPaused() const;
     void resume();
     void pause();
+
 private:
     void playDefaultLevel();
     void pollEvents();

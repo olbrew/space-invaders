@@ -7,17 +7,17 @@
 #include <iostream>
 
 namespace tysfml {
-    class BGTile: public ty::BGTile
-    {
-    public:
-        BGTile();
-        const sf::Sprite& getSprite() const;
-    private:
-        void loadTexture();
+class BGTile : public ty::BGTile {
+public:
+    BGTile();
+    const sf::Sprite& getSprite() const;
 
-        sf::Texture _texture;
-        sf::Sprite _sprite;
-    };
+private:
+    void loadTexture();
+
+    sf::Texture _texture;
+    sf::Sprite _sprite;
+};
 } /* namespace tysfml */
 
 #endif

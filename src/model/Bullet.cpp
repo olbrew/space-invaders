@@ -1,6 +1,7 @@
 /**
  * @file
- *		Defines a bullet which can be shot by a PlayerShip or an EnemyShip.
+ *		Defines a bullet which can be shot by a PlayerShip or an
+ *EnemyShip.
  * @author
  *		Olivier Brewaeys
  *
@@ -12,23 +13,24 @@
 
 #include "Bullet.h"
 
-namespace ty
+namespace ty {
+Bullet::Bullet(const std::shared_ptr<Entity> ship)
+    : Entity(10)
+    , _ship(ship)
 {
-    Bullet::Bullet(const std::shared_ptr<Entity> ship): Entity(10), _ship(ship)
-    {
-        _pos = ship->getPos();
-    }
+    _pos = ship->getPos();
+}
 
-    /**
-     * Move bullet to a new position.
-     * Asserts that the bullet can only be moved vertically.
-     * This could be upgraded in a future version.
-     * @param   pos     Position to be moved to.
-     */
-    void Bullet::move(const util::Position pos)
-    {
-        assert(pos._x == _pos._x);
+/**
+ * Move bullet to a new position.
+ * Asserts that the bullet can only be moved vertically.
+ * This could be upgraded in a future version.
+ * @param   pos     Position to be moved to.
+ */
+void Bullet::move(const util::Position pos)
+{
+    assert(pos._x == _pos._x);
 
-        _pos = pos;
-    }
+    _pos = pos;
+}
 }

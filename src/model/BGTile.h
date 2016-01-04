@@ -3,14 +3,12 @@
 
 #include "Entity.h"
 
-namespace  ty
-{
-    class BGTile: public Entity
-    {
-    public:
-        BGTile();
-        void move(const util::Position);
-    };
+namespace ty {
+class BGTile : public Entity {
+public:
+    BGTile();
+    void move(const util::Position);
+};
 }
 
 #endif

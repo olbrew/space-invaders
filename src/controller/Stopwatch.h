@@ -8,8 +8,7 @@
  * For desgin considerations see:
  * https://stackoverflow.com/questions/1008019/c-singleton-design-pattern
  */
-class Stopwatch
-{
+class Stopwatch {
 public:
     static Stopwatch& getStopwatch()
     {
@@ -18,8 +17,9 @@ public:
     }
     unsigned long int elapsedSeconds() const;
     unsigned long int elapsedMilliSeconds() const;
+
 private:
-    Stopwatch() {};
+    Stopwatch(){};
     Stopwatch(const Stopwatch&) = delete;
     Stopwatch& operator=(const Stopwatch&) = delete;
 

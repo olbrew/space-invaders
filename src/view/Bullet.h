@@ -8,17 +8,17 @@
 #include <memory>
 
 namespace tysfml {
-    class Bullet: public ty::Bullet
-    {
-    public:
-        Bullet(const std::shared_ptr<Entity>);
-        const sf::Sprite& getSprite() const;
-    private:
-        void loadTexture();
+class Bullet : public ty::Bullet {
+public:
+    Bullet(const std::shared_ptr<Entity>);
+    const sf::Sprite& getSprite() const;
 
-        sf::Texture _texture;
-        sf::Sprite _sprite;
-    };
+private:
+    void loadTexture();
+
+    sf::Texture _texture;
+    sf::Sprite _sprite;
+};
 } /* namespace tysfml */
 
 #endif

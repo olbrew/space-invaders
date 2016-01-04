@@ -8,8 +8,7 @@
  */
 #include "Menu.h"
 
-namespace tysfml
-{
+namespace tysfml {
 Menu::Menu(std::shared_ptr<Window> window)
 {
     loadTexture();
@@ -28,30 +27,24 @@ Menu::Menu(std::shared_ptr<Window> window)
 
 void Menu::loadTexture()
 {
-    try
-    {
-        if (!_texture.loadFromFile("../resources/img/menu.gif"))
-        {
+    try {
+        if (!_texture.loadFromFile("../resources/img/menu.gif")) {
             throw std::runtime_error("Could not load menu texture from file");
         }
     }
-    catch (std::runtime_error& e)
-    {
+    catch (std::runtime_error& e) {
         std::cerr << e.what() << std::endl;
     }
 }
 
 void Menu::loadFont()
 {
-    try
-    {
-        if (!_font.loadFromFile("../resources/fonts/HelveticaNeue.dfont"))
-        {
+    try {
+        if (!_font.loadFromFile("../resources/fonts/HelveticaNeue.dfont")) {
             throw std::runtime_error("Could not load font from file");
         }
     }
-    catch (std::runtime_error& e)
-    {
+    catch (std::runtime_error& e) {
         std::cerr << e.what() << std::endl;
     }
 }

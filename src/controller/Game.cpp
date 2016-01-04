@@ -18,7 +18,11 @@
  * level is pushed onto the levels queue.
  * There is also a window created for
  */
-Game::Game(): _paused(true), _running(true), _window(std::make_shared<tysfml::Window>()) {
+Game::Game()
+    : _paused(true)
+    , _running(true)
+    , _window(std::make_shared<tysfml::Window>())
+{
     setup();
 }
 
@@ -33,8 +37,7 @@ void Game::setup()
 
     // run
     std::shared_ptr<sf::RenderWindow> window = _window->getWindow();
-    while (window->isOpen())
-    {
+    while (window->isOpen()) {
         pollEvents();
         window->clear();
         if (_paused)
@@ -50,8 +53,7 @@ void Game::setup()
  */
 void Game::run()
 {
-    while (_running)
-    {
+    while (_running) {
         pollEvents();
         update();
     }
@@ -63,10 +65,8 @@ void Game::run()
 void Game::pollEvents()
 {
     sf::Event event;
-    while (_window->get()->pollEvent(event))
-    {
-        switch (event.type)
-        {
+    while (_window->get()->pollEvent(event)) {
+        switch (event.type) {
         case sf::Event::Closed:
             _window->get()->close();
             break;
@@ -85,15 +85,12 @@ void Game::pollEvents()
 
 void Game::processInput(sf::Event& event)
 {
-    if (_paused)
-    {
+    if (_paused) {
         if (event.key.code == sf::Keyboard::Return)
             resume();
     }
-    else
-    {
-        switch (Keyboard::getKeyboard().processKeys(event))
-        {
+    else {
+        switch (Keyboard::getKeyboard().processKeys(event)) {
         case 2:
             // escape
             pause();
@@ -104,8 +101,7 @@ void Game::processInput(sf::Event& event)
             break;
         case 4:
             // right arrow
-            _world.rightP1()
-            break;
+            _world.rightP1() break;
         case 5:
             // up arrow
             _world.speedup();
@@ -147,14 +143,10 @@ void Game::playDefaultLevel()
     _paused = false;
 }
 
-
 void Game::resume()
 {
     _paused = false;
     playDefaultLevel();
 }
 
-void Game::pause()
-{
-    _paused = true;
-}
+void Game::pause() { _paused = true; }

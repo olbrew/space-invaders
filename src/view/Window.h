@@ -4,14 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 
-namespace tysfml
-{
-class Window
-{
+namespace tysfml {
+class Window {
 public:
     Window();
     ~Window();
     std::shared_ptr<sf::RenderWindow> get();
+
 private:
     std::shared_ptr<sf::RenderWindow> _window;
 };
