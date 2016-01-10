@@ -1,5 +1,5 @@
 ADD_LIBRARY(controller
-    Game.cpp
+    SFMLGame.cpp
     Stopwatch.cpp
     Keyboard.cpp
     )

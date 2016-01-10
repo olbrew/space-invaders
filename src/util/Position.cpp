@@ -19,7 +19,8 @@ Position::Position()
 
 /**
  * Initialise position on given x, y coordinates
- * @param     x     x-coordinate
+ *
+ ;cc
  * @param     y     y-coordinate
  */
 Position::Position(const unsigned int x, const unsigned int y)

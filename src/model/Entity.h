@@ -2,27 +2,33 @@
 #define ENTITY_H_
 
 #include "../util/Position.h"
-#include <SFML/Graphics.hpp>
 
-namespace ty {
-class Entity {
-public:
-    virtual void move(const util::Position) = 0;
-    const util::Position& getPos() const;
-    virtual const sf::Sprite& getSprite() const;
+namespace si {
+namespace model {
 
-protected:
-    // hidden ctors
-    Entity();
-    Entity(const unsigned int);
-    Entity(const util::Position, const unsigned int);
+    /**
+     * @file
+     *      ABC for different entities of which game world can exist.
+     * @author
+     *      Olivier Brewaeys
+     *
+     *  Our gameworld consists of entities and is one in itself as
+     *  well, so this class serves as a parent class for the
+     *  composition design pattern.
+     */
+    class Entity {
+    public:
+        // TODO composite pattern: every entity has an updaet function
+        virtual void update() = 0;
 
-    // data members
-    util::Position _pos;
-    const unsigned int _radius;
-    // empty sprite to return by the virtual getSprite function
-    sf::Sprite _sprite;
-};
-}
+    protected:
+        // hidden ctors
+        //Entity();
+        //Entity(const unsigned int);
+        //Entity(const util::Position, const unsigned int);
+    };
+
+} /* namespace model */
+} /* namespace si */
 
 #endif

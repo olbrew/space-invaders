@@ -5,18 +5,25 @@
 #include "Bullet.h"
 #include <cassert>
 
-namespace ty {
-class PlayerShip : public Entity {
-public:
-    PlayerShip();
-    void move(const util::Position);
-    void moveOffset(const int offset);
-    bool hit(const unsigned int);
-    void shoot();
+namespace si {
+namespace model {
 
-private:
-    int _hp;
-};
-} /* namespace ty */
+    class PlayerShip : public Entity {
+    public:
+        PlayerShip();
+        void update();
+
+        void move(const util::Position);
+        void moveOffset(const int offset);
+        bool hit(const unsigned int);
+        void shoot();
+
+    private:
+        int _hp;
+        util::Position _pos;
+    };
+
+} /* namespace model */
+} /* namespace si */
 
 #endif

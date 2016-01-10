@@ -5,17 +5,23 @@
 #include <cassert>
 #include <random>
 
-namespace ty {
-class EnemyShip : public Entity {
-public:
-    EnemyShip();
-    void move(const util::Position);
-    bool hit(const unsigned int);
-    void shoot();
+namespace si {
+namespace model {
 
-private:
-    int _hp;
-};
-}
+    class EnemyShip : public Entity {
+    public:
+        EnemyShip();
+        void move(const util::Position);
+        void update();
+        bool hit(const unsigned int);
+        void shoot();
+
+    private:
+        int _hp;
+        util::Position _pos;
+    };
+
+} /* namespace model */
+} /* namespace si */
 
 #endif

@@ -11,47 +11,51 @@
 
 #include "World.h"
 
-namespace ty {
-/**
- * Creates a world with its entities.
- * Must make a entity object, because Entity is an ABC.
- * But it has no special meaning in a world object, so
- * all values get initialised to 0.
- */
-World::World()
-    : Entity({ 0, 0 }, 0)
-    , _ps(std::make_shared<PlayerShip>())
-    , _score(0)
-{
-    _worldEntities.push_back(std::make_shared<BGTile>());
-    _worldEntities.push_back(_ps);
-}
+namespace si {
+namespace model {
 
-/**
- * empty function because move has no effect on a world object.
- * @param    pos      empty position
- */
-void World::move(const util::Position) {}
+    /**
+     * Creates a world with its entities.
+     * Must make a entity object, because Entity is an ABC.
+     * But it has no special meaning in a world object, so
+     * all values get initialised to 0.
+     */
+    World::World()
+        : _ps(std::make_shared<PlayerShip>())
+        , _score(0)
+    {
+        _worldEntities.push_back(_ps);
+    }
 
-/**
- * Change score in this particular level.
- * @param   points     How many points to add or subtract.
- */
-void World::score(const int points)
-{
-    if (_score + points <= 0)
-        _score = 0;
-    else
-        _score += points;
-}
+    /**
+     * empty function because move has no effect on a world object.
+     * @param    pos      empty position
+     */
+    void World::move(const util::Position) {}
 
-/**
- * Return pointer to the playership of this world.
- */
-std::shared_ptr<PlayerShip> World::getPS() const { return _ps; }
+    void World::update() {}
 
-std::deque<std::shared_ptr<Entity> > World::getEntities()
-{
-    return _worldEntities;
-}
-}
+    /**
+     * Change score in this particular level.
+     * @param   points     How many points to add or subtract.
+     */
+    void World::score(const int points)
+    {
+        if (_score + points <= 0)
+            _score = 0;
+        else
+            _score += points;
+    }
+
+    /**
+     * Return pointer to the playership of this world.
+     */
+    std::shared_ptr<PlayerShip> World::getPS() const { return _ps; }
+
+    std::deque<std::shared_ptr<Entity> > World::getEntities()
+    {
+        return _worldEntities;
+    }
+
+} /* namespace model */
+} /* namespace si */

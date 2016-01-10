@@ -1,29 +1,34 @@
-#ifndef STOPWATCH_H
-#define STOPWATCH_H
+#ifndef STOPWATCH_H_
+#define STOPWATCH_H_
 
-#include <SFML/System.hpp>
+#include <SFML/System/Clock.hpp>
 
-/*
- * Singleton class:
- * For desgin considerations see:
- * https://stackoverflow.com/questions/1008019/c-singleton-design-pattern
- */
-class Stopwatch {
-public:
-    static Stopwatch& getStopwatch()
-    {
-        static Stopwatch instance;
-        return instance;
-    }
-    unsigned long int elapsedSeconds() const;
-    unsigned long int elapsedMilliSeconds() const;
+namespace si {
+namespace controller {
 
-private:
-    Stopwatch(){};
-    Stopwatch(const Stopwatch&) = delete;
-    Stopwatch& operator=(const Stopwatch&) = delete;
+    /*
+     * Singleton class:
+     * For desgin considerations see:
+     * https://stackoverflow.com/questions/1008019/c-singleton-design-pattern
+     */
+    class Stopwatch {
+    public:
+        static Stopwatch& getStopwatch()
+        {
+            static Stopwatch instance;
+            return instance;
+        }
+        unsigned long int elapsedSeconds() const;
+        unsigned long int elapsedMilliSeconds() const;
 
-    static sf::Clock _clock;
-};
+    private:
+        Stopwatch(){};
+        Stopwatch(const Stopwatch&) = delete;
+        Stopwatch& operator=(const Stopwatch&) = delete;
 
+        static sf::Clock clock_;
+    };
+
+} /* namespace controller */
+} /* namespace si */
 #endif

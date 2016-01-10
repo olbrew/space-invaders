@@ -13,40 +13,25 @@
 
 #include "Keyboard.h"
 
-int Keyboard::processKeys(sf::Event& event) const
-{
-    switch (event.key.code) {
-    case sf::Keyboard::Return:
-        return 1;
-        break;
-    case sf::Keyboard::Escape:
-        return 2;
-        break;
-    case sf::Keyboard::Left:
-        return 3;
-        break;
-    case sf::Keyboard::Right:
-        return 4;
-        break;
-    case sf::Keyboard::Up:
-        return 5;
-        break;
-    case sf::Keyboard::Down:
-        return 6;
-        break;
-    case sf::Keyboard::Space:
-        return 7;
-        break;
-    case sf::Keyboard::A:
-        return 8;
-        break;
-    case sf::Keyboard::D:
-        return 9;
-        break;
-    case sf::Keyboard::W:
-        return 10;
-        break;
-    default:
-        std::cerr << "Invalid keyboard input" << std::endl;
+namespace si {
+namespace controller {
+
+    int Keyboard::processKeys(sf::Event& event) const
+    {
+        switch (event.key.code) {
+        case sf::Keyboard::Left:
+            return 0;
+            break;
+        case sf::Keyboard::Right:
+            return 1;
+            break;
+        case sf::Keyboard::Space:
+            return 2;
+            break;
+        default:
+            return -1;
+        }
     }
-}
+
+} /* namespace controller */
+} /* namespace si */

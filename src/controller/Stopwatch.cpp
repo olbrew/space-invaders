@@ -12,14 +12,20 @@
 
 #include "Stopwatch.h"
 
-unsigned long int Stopwatch::elapsedSeconds() const
-{
-    sf::Time elapsed = _clock.getElapsedTime();
-    return elapsed.asSeconds();
-}
+namespace si {
+namespace controller {
 
-unsigned long int Stopwatch::elapsedMilliSeconds() const
-{
-    sf::Time elapsed = _clock.getElapsedTime();
-    return elapsed.asMilliseconds();
-}
+    unsigned long int Stopwatch::elapsedSeconds() const
+    {
+        sf::Time elapsed = clock_.getElapsedTime();
+        return elapsed.asSeconds();
+    }
+
+    unsigned long int Stopwatch::elapsedMilliSeconds() const
+    {
+        sf::Time elapsed = clock_.getElapsedTime();
+        return elapsed.asMilliseconds();
+    }
+
+} /* namespace controller */
+} /* namespace si */

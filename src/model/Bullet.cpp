@@ -13,24 +13,27 @@
 
 #include "Bullet.h"
 
-namespace ty {
-Bullet::Bullet(const std::shared_ptr<Entity> ship)
-    : Entity(10)
-    , _ship(ship)
-{
-    _pos = ship->getPos();
-}
+namespace si {
+namespace model {
 
-/**
- * Move bullet to a new position.
- * Asserts that the bullet can only be moved vertically.
- * This could be upgraded in a future version.
- * @param   pos     Position to be moved to.
- */
-void Bullet::move(const util::Position pos)
-{
-    assert(pos._x == _pos._x);
+    Bullet::Bullet(const std::shared_ptr<Entity> ship)
+        : _ship(ship)
+    {
+        //_pos = ship->getPos();
+    }
 
-    _pos = pos;
-}
-}
+    /**
+     * Move bullet to a new position.
+     * Asserts that the bullet can only be moved vertically.
+     * This could be upgraded in a future version.
+     * @param   pos     Position to be moved to.
+     */
+    void Bullet::move(const util::Position pos)
+    {
+        assert(pos._x == _pos._x);
+
+        _pos = pos;
+    }
+
+} /* namespace model */
+} /* namespace si */

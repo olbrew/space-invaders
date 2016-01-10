@@ -2,7 +2,9 @@
 SET(EXECUTABLE_NAME space_invaders)
 
 # The source files to compile
-SET(SRC main.cpp)
+SET(SRC
+    main.cpp
+    )
 
 # Add additional src subdirectories
 ADD_SUBDIRECTORY(model)
