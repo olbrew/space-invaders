@@ -1,5 +1,14 @@
-#ifndef RANDOMGENERATOR_H
-#define RANDOMGENERATOR_H
+/**
+ * @file
+ *      Singleton RandomGenerator class for generating random numbers
+ * @author
+ *      Olivier Brewaeys
+ *
+ * This class is a singleton, see the header file for precise implementation.
+ */
+
+#ifndef RANDOMGENERATOR_H_
+#define RANDOMGENERATOR_H_
 
 #include <random>
 
@@ -10,13 +19,26 @@
  */
 class RandomGenerator {
 public:
+    /**
+     * Returns the (single!) RandomGenerator object
+     *
+     * @return   The Randomgenerator object
+     */
     static RandomGenerator& getRandomGenerator()
     {
         static RandomGenerator instance;
         return instance;
     }
 
-    unsigned int getRandomNumber(unsigned int max = 640) const;
+    /**
+     * Returns a new random number between 0 and max
+     *
+     * @param    max      The random number will be generated between 0 and this
+     * value
+     *
+     * @return   the random number
+     */
+    unsigned int getRandomNumber(unsigned int max) const;
 
 private:
     RandomGenerator(){};

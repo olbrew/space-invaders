@@ -1,68 +1,61 @@
-/**
- * @file
- *		Defines an EnemyShip.
- * @author
- *		Olivier Brewaeys
- *
- *	In this version of the game, an enemyship is spawn at a
- *	random x-coordinate at the top of the world and moves down
- *	with time. It cannot move sideways and fires bullets with
- *	constant speed.
- */
-
 #include "EnemyShip.h"
 
 namespace si {
 namespace model {
 
-    /**
-     * EnemyShip ctor spawns enemyship at random x-coordinate at the top of the
-     * world.
-     * Creates an enemyship at a random x-coordinate at the top of the world.
-     * The starting y-coordinate is always 0.
-     * The enemyship also has a radius and life/hitpoints.
-     */
-    EnemyShip::EnemyShip()
-        : _hp(5)
+    EnemyShip::EnemyShip(const unsigned int index, const bool right,
+        const Size size, const unsigned int hp, const unsigned int speed)
+        : index_(index)
+        , right_(right)
+        , size_(size)
+        , hp_(hp)
+        , speed_(speed)
     {
-        // create random x-coordinate for our world.
-        std::random_device rd;
-        std::mt19937 generator(rd());
-        std::uniform_int_distribution<> rand(1, 31);
-        const unsigned int randomX = rand(generator);
-        // we can't use move here, because of the assert that we can only
-        // stay on 1 x-coordinate would fail this. This is only needed to
-        // initalise the ships location.
-        _pos = { randomX, 0 };
+        pos_.x = ((index + 1) * 2) + 2;
+        pos_.y = ((index % 5) + 1) * 2;
     }
 
-    void EnemyShip::update() {}
-
-    /**
-     * Move enemyship to a new position.
-     * Asserts that the enemyship can only be moved vertically.
-     * This could be upgraded in a future version.
-     * @param   pos     Position to be moved to.
-     */
-    void EnemyShip::move(const util::Position pos)
+    bool EnemyShip::update()
     {
-        assert(pos._x == _pos._x);
-
-        _pos = pos;
-    }
-
-    /**
-     * Reduces EnemyShips' life and returns true when dead.
-     * @param   hp     The amount of hp to decrease with.
-     * @return  returns true when enemyship dies and false when it stays alive.
-     */
-    bool EnemyShip::hit(const unsigned int hp)
-    {
-        if (_hp - hp <= 0) {
+        // first check if ship is still alive
+        if (hp_ <= 0) {
+            return false;
+        }
+        else {
+            // then calculate new postion
+            // (re)calculate original x coordinate based on index.
+            unsigned int start_x = ((index_ + 1) * 2) + 2;
+            if (right_) {
+                unsigned int new_x = pos_.x + speed_;
+                if (new_x > start_x + 2) {
+                    pos_.x = start_x + 2;
+                    right_ = false;
+                }
+                else {
+                    pos_.x = new_x;
+                }
+            }
+            else {
+                unsigned int new_x = pos_.x - speed_;
+                if (new_x < start_x - 3) {
+                    pos_.x = start_x - 3;
+                }
+                else {
+                    pos_.x = new_x;
+                }
+            }
             return true;
         }
-        _hp -= hp;
-        return false;
+    }
+
+    void EnemyShip::shoot() { Bullet bullet(false, pos_); }
+
+    void EnemyShip::hit(const unsigned int hp)
+    {
+        if (hp_ - hp <= 0) {
+            hp_ = 0;
+        }
+        hp_ -= hp;
     }
 
 } /* namespace model */
