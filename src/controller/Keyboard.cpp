@@ -1,16 +1,3 @@
-/**
- * @file
- *      Singleton Keyboard class for processing keyboard input.
- * @author
- *      Olivier Brewaeys
- *
- * This class is a singleton, see the header file for precise implementation.
- * It  has only one function: it processes keyboard input and returns a number
- * according to its input.
- *
- * It does not directly operate on the world to preserve encapsulation.
- */
-
 #include "Keyboard.h"
 
 namespace si {

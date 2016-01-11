@@ -27,13 +27,12 @@ namespace model {
     using std::shared_ptr;
 
     class World : public Entity {
-        typedef std::list<shared_ptr<EnemyShip> > EnemyShipList;
-        typedef std::list<shared_ptr<Bullet> > BulletList;
+        typedef std::list<shared_ptr<Entity> > EntityList;
 
     private:
         shared_ptr<PlayerShip> ps_;
-        shared_ptr<EnemyShipList> enemyships_;
-        shared_ptr<BulletList> bullets_;
+        shared_ptr<EntityList> enemyships_;
+        shared_ptr<EntityList> bullets_;
 
     public:
         /**
@@ -50,11 +49,20 @@ namespace model {
         bool update();
 
         /**
+         * Inherited getPosition command, not really needed for world
+         * because it has no position.
+         *
+         * @return   default, meaningless Position because world has no
+         *           meaningfull location
+         */
+        Position getPosition() const { return Position(); }
+
+        /**
          * Some getters
          */
         shared_ptr<PlayerShip> getPS() const { return ps_; }
-        shared_ptr<EnemyShipList> get_enemyships() const { return enemyships_; }
-        shared_ptr<BulletList> get_bullets() const { return bullets_; }
+        shared_ptr<EntityList> get_enemyships() const { return enemyships_; }
+        shared_ptr<EntityList> get_bullets() const { return bullets_; }
     };
 
 } /* namespace model */

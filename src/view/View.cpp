@@ -1,12 +1,3 @@
-/**
- * @file
- *		The View class holds the actual textures and takes care of
- *      drawing the objects on an SFML window.
- *
- * @author
- *		Olivier Brewaeys
- */
-
 #include "View.h"
 
 namespace si {
@@ -62,10 +53,13 @@ namespace view {
         enemyship_sprite_->setTexture(*enemyship_texture_);
         bullet_sprite_->setTexture(*bullet_texture_);
 
-        // scale sprites for use
+        // scale sprites for our window size
         playership_sprite_->scale(0.2f, 0.2f);
         enemyship_sprite_->scale(0.2f, 0.2f);
         bullet_sprite_->scale(0.2f, 0.2f);
+
+        // set origin for easier use
+        playership_sprite_->setOrigin(100, 50);
     }
 
     void View::load_playership_texture()

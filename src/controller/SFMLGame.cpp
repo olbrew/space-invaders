@@ -19,12 +19,17 @@ namespace controller {
             // proces events
             sf::Event event;
             while (window_->pollEvent(event)) {
-                int action;
                 if (event.type == sf::Event::Closed) {
                     window_->close();
                 }
                 else if (event.type == sf::Event::KeyPressed) {
-                    action = Keyboard::getKeyboard().processKeys(event);
+                    int action = Keyboard::getKeyboard().processKeys(event);
+                    if (action == 0)
+                        world_->getPS()->move(false);
+                    if (action == 1)
+                        world_->getPS()->move(true);
+                    if (action == 2)
+                        world_->getPS()->shoot();
                 }
                 // update the world as long as the player lives
                 // Returns false when player dies.

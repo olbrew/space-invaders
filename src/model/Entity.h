@@ -38,6 +38,15 @@ namespace model {
          * @return   whether the object is still alive and/or in the world.
          */
         virtual bool update() = 0;
+
+        /**
+         * Returns current Position.
+         * Needed by the drawable entities for drawing them at the right
+         * location.
+         *
+         * @return   The current position of the entity.
+         */
+        virtual Position getPosition() const = 0;
     };
 
 } /* namespace model */

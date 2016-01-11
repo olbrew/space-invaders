@@ -1,8 +1,17 @@
+/**
+ * @file
+ *      Singleton Keyboard class for processing keyboard input.
+ * @author
+ *      Olivier Brewaeys
+ *
+ * This class is a singleton keyboard which has the single purpose of processing
+ * keyboard input event for our game.
+ */
+
 #ifndef KEYBOARD_H_
 #define KEYBOARD_H_
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 /*
  * Singleton class:

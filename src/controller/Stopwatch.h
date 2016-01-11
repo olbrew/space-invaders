@@ -1,3 +1,13 @@
+/**
+ * @file
+ *      Singleton Stopwatch class for keeping time.
+ * @author
+ *      Olivier Brewaeys
+ *
+ * This singleton time keeping class is used to execute the game loop at a fixed
+ * interval so that this game can run at the same rate on different platforms.
+ */
+
 #ifndef STOPWATCH_H_
 #define STOPWATCH_H_
 

@@ -1,5 +1,4 @@
 #include "EnemyShip.h"
-#include <iostream>
 
 namespace si {
 namespace model {
@@ -13,7 +12,6 @@ namespace model {
         , hp_(hp)
         , speed_(speed)
     {
-        std::cout << pos_.x << ", " << pos_.y << std::endl;
     }
 
     bool EnemyShip::update()
