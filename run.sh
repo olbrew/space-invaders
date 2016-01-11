@@ -11,4 +11,4 @@ then
 fi
 
 # run the game
-./bin/space_invaders
+../bin/space_invaders
