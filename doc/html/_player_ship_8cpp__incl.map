@@ -1,0 +1,6 @@
+<map id="src/model/PlayerShip.cpp" name="src/model/PlayerShip.cpp">
+<area shape="rect" id="node2" href="$_player_ship_8h.html" title=" Defines a PlayerShip &#160;" alt="" coords="88,79,185,104"/>
+<area shape="rect" id="node3" href="$_entity_8h.html" title=" ABC for different entities of which game world can exist. " alt="" coords="195,225,260,251"/>
+<area shape="rect" id="node4" href="$_vector2_d_8h.html" title=" Small class which can hold 2 objects of the same type. " alt="" coords="5,299,124,324"/>
+<area shape="rect" id="node5" href="$_bullet_8h.html" title="Defines a bullet which can be shot by a PlayerShip or an &#160;EnemyShip. " alt="" coords="104,152,170,177"/>
+</map>

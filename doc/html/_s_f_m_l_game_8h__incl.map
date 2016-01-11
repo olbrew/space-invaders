@@ -1,0 +1,11 @@
+<map id="src/controller/SFMLGame.h" name="src/controller/SFMLGame.h">
+<area shape="rect" id="node2" href="$_keyboard_8h.html" title=" Singleton Keyboard class for processing keyboard input. " alt="" coords="35,79,124,104"/>
+<area shape="rect" id="node4" href="$_world_8h.html" title=" Defines the world in the game runs. " alt="" coords="575,152,693,177"/>
+<area shape="rect" id="node15" href="$_view_8h.html" title="../view/View.h" alt="" coords="207,79,309,104"/>
+<area shape="rect" id="node5" href="$_entity_8h.html" title=" ABC for different entities of which game world can exist. " alt="" coords="783,372,848,397"/>
+<area shape="rect" id="node7" href="$_player_ship_8h.html" title=" Defines a PlayerShip &#160;" alt="" coords="721,225,818,251"/>
+<area shape="rect" id="node8" href="$_bullet_8h.html" title="Defines a bullet which can be shot by a PlayerShip or an &#160;EnemyShip. " alt="" coords="712,299,778,324"/>
+<area shape="rect" id="node10" href="$_enemy_ship_8h.html" title="Defines an EnemyShip. " alt="" coords="904,225,1004,251"/>
+<area shape="rect" id="node6" href="$_vector2_d_8h.html" title=" Small class which can hold 2 objects of the same type. " alt="" coords="685,445,804,471"/>
+<area shape="rect" id="node11" href="$_random_generator_8h.html" title=" Singleton RandomGenerator class for generating random numbers &#160;" alt="" coords="954,299,1128,324"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="si::model::Entity" name="si::model::Entity">
+<area shape="rect" id="node2" href="$classsi_1_1model_1_1_bullet.html" title="{si::model::Bullet\n||+ Bullet()\l+ update()\l+ getPosition()\l}" alt="" coords="5,173,121,273"/>
+<area shape="rect" id="node3" href="$classsi_1_1model_1_1_enemy_ship.html" title="{si::model::EnemyShip\n||+ EnemyShip()\l+ update()\l+ shoot()\l+ hit()\l+ getPosition()\l}" alt="" coords="145,160,296,287"/>
+<area shape="rect" id="node4" href="$classsi_1_1model_1_1_player_ship.html" title="{si::model::PlayerShip\n||+ PlayerShip()\l+ update()\l+ move()\l+ shoot()\l+ hit()\l+ getPosition()\l}" alt="" coords="319,153,466,293"/>
+<area shape="rect" id="node5" href="$classsi_1_1model_1_1_world.html" title="{si::model::World\n||+ World()\l+ update()\l+ getPosition()\l+ getPS()\l+ get_enemyships()\l+ get_bullets()\l}" alt="" coords="490,153,628,293"/>
+</map>

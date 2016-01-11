@@ -1,0 +1,8 @@
+<map id="src/model/World.h" name="src/model/World.h">
+<area shape="rect" id="node2" href="$_entity_8h.html" title=" ABC for different entities of which game world can exist. " alt="" coords="61,225,126,251"/>
+<area shape="rect" id="node4" href="$_player_ship_8h.html" title=" Defines a PlayerShip &#160;" alt="" coords="28,79,125,104"/>
+<area shape="rect" id="node5" href="$_bullet_8h.html" title="Defines a bullet which can be shot by a PlayerShip or an &#160;EnemyShip. " alt="" coords="113,152,178,177"/>
+<area shape="rect" id="node7" href="$_enemy_ship_8h.html" title="Defines an EnemyShip. " alt="" coords="254,79,354,104"/>
+<area shape="rect" id="node3" href="$_vector2_d_8h.html" title=" Small class which can hold 2 objects of the same type. " alt="" coords="69,299,188,324"/>
+<area shape="rect" id="node8" href="$_random_generator_8h.html" title=" Singleton RandomGenerator class for generating random numbers &#160;" alt="" coords="304,152,478,177"/>
+</map>

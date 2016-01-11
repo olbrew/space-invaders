@@ -1,0 +1,10 @@
+<map id="src/view/View.cpp" name="src/view/View.cpp">
+<area shape="rect" id="node2" href="$_view_8h.html" title="View.h" alt="" coords="667,79,728,104"/>
+<area shape="rect" id="node3" href="$_world_8h.html" title=" Defines the world in the game runs. " alt="" coords="289,152,407,177"/>
+<area shape="rect" id="node5" href="$_vector2_d_8h.html" title=" Small class which can hold 2 objects of the same type. " alt="" coords="243,445,363,471"/>
+<area shape="rect" id="node4" href="$_entity_8h.html" title=" ABC for different entities of which game world can exist. " alt="" coords="201,372,266,397"/>
+<area shape="rect" id="node6" href="$_player_ship_8h.html" title=" Defines a PlayerShip &#160;" alt="" coords="255,225,351,251"/>
+<area shape="rect" id="node7" href="$_bullet_8h.html" title="Defines a bullet which can be shot by a PlayerShip or an &#160;EnemyShip. " alt="" coords="270,299,336,324"/>
+<area shape="rect" id="node9" href="$_enemy_ship_8h.html" title="Defines an EnemyShip. " alt="" coords="79,225,180,251"/>
+<area shape="rect" id="node10" href="$_random_generator_8h.html" title=" Singleton RandomGenerator class for generating random numbers &#160;" alt="" coords="21,299,195,324"/>
+</map>

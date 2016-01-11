@@ -1,0 +1,8 @@
+<map id="src/model/World.h" name="src/model/World.h">
+<area shape="rect" id="node2" href="$_s_f_m_l_game_8h.html" title=" Sets up a SFML Game and runs it. " alt="" coords="98,152,282,177"/>
+<area shape="rect" id="node5" href="$_view_8h.html" title="src/view/View.h" alt="" coords="227,79,339,104"/>
+<area shape="rect" id="node7" href="$_world_8cpp.html" title="src/model/World.cpp" alt="" coords="364,79,507,104"/>
+<area shape="rect" id="node3" href="$_s_f_m_l_game_8cpp.html" title="src/controller/SFMLGame.cpp" alt="" coords="5,225,204,251"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="228,225,325,251"/>
+<area shape="rect" id="node6" href="$_view_8cpp.html" title="src/view/View.cpp" alt="" coords="307,152,433,177"/>
+</map>
