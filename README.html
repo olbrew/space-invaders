@@ -1,0 +1,29 @@
+<h1 id="space-invaders">Space Invaders</h1>
+<h2 id="brief">Brief</h2>
+<p>This project implements the arcade game Space Invaders in the C++ language with modern constructs from the c++11 standard. It hopes to achieve modularity by implementing it in different stand-alone libraries. For more info on the design reconsiderations see under the Design subsection.</p>
+<h2 id="install">Install</h2>
+<p>There is an included <code>run.sh</code> script which will automatically compile, install and start the game for you. You can find it in the root directory. Remember that this will take some time for the compilation phase on the first run.</p>
+<pre><code>./run.sh</code></pre>
+<h2 id="design">Design</h2>
+<p>The Observer pattern of MVC was closely followed in this project. The controller sets up and runs the game in the main loop in the GameSFML class. Other classes for other frameworks could be made.</p>
+<p>SFMLGame sets up an SFML window on which to run the loop and initiates a model and a view. It registers the model and the window with the view. The view is thus an observer which can get data out of the model to draw the model entities on an SFML window.</p>
+<p>The main loop watches for input from the Keyboard helper class and if received sends an according action to the view.</p>
+<p>No SFML related code is found in the model so it can be easy to couple it with another controller and/or view.</p>
+<p>This strict separation of duties can be seen in the dependency graph:</p>
+<div class="figure">
+<img src="./doc/dependency%20graph.png" alt="dependency graph" />
+<p class="caption">dependency graph</p>
+</div>
+<p>After the events have been polled it is time to update the entities. This is quite easy because the world contains all the entities. Though not one big list of all entities. I thought about doing this, but decided in the end that advantage of having one big list of entitities didn't weigh up against the disadvantages of constantly having to do checks for which object the entity actually pointed to which were not solvable via polymorphic function calls.</p>
+<p>Though the world still holds all the current entities and the <code>update</code> function from the ABC entity updates on its part all the enitities the world contains. So this is still an application from the Composite design pattern.</p>
+<p>In the UML diagram for Entity and its children you can clearly see the Entity and its virtual functions <code>update</code> and <code>getPosition</code>. <code>getPosition</code> is used polymorphically in the view to calculate the position for Enemyships and Bullets which are stored in containers with Entity pointers.</p>
+<div class="figure">
+<img src="./doc/uml%20diagram%20model.png" alt="UML diagram for Entity and its children" />
+<p class="caption">UML diagram for Entity and its children</p>
+</div>
+<p>I tried to limit memory consumption through extensive use of pointers whenever the variables needed accessing across the libraries (model, view &amp; controller are all defined in their separate libraries to maximise reusability.). I did still take care to not pollute the heap with variables which don't need this global access.</p>
+<p>Because a construct to store 2 variables is often needed, for example for a Position or Size on a 2D grid, I made a <code>Vector2D</code> template which can be reused across different types. It can be found in the <code>util</code> library together with a <code>RandomGenerator</code> class This Vector2D is then typedef'd with an appropriate type in some classes to make it more easily recognizable.</p>
+<p>I also try to only make methods public when they need to actually be publicly accessible.</p>
+<p>For more information you can read the extensively documented source or use the generated Doxygen documentation by opening <code>doc/html/index.html</code> in your browser of choice.</p>
+<h2 id="author">Author</h2>
+<p>Olivier Brewaeys (s0114375)</p>
