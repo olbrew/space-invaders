@@ -17,18 +17,22 @@
 #include "EnemyShip.h"
 #include "Bullet.h"
 
-#include <deque>
+#include <list>
 #include <memory>
-#include <string>
 #include <cassert>
 
 namespace si {
 namespace model {
 
+    using std::shared_ptr;
+
     class World : public Entity {
+        typedef std::list<shared_ptr<Entity> > EntityList;
+
     private:
-        std::deque<std::shared_ptr<Entity> > entities_;
-        std::shared_ptr<PlayerShip> ps_;
+        shared_ptr<PlayerShip> ps_;
+        shared_ptr<EntityList> enemyships_;
+        shared_ptr<EntityList> bullets_;
 
     public:
         /**
@@ -39,14 +43,17 @@ namespace model {
 
         /**
          * Inherited update command to update all enitities.
-         * This follows the composition design pattern as world is itself an
-         * entity.
+         * This follows the composition design pattern as world is an
+         * entity itself.
          */
         bool update();
-        std::string type() const { return "world"; }
 
-        std::shared_ptr<PlayerShip> getPS() { return ps_; }
-        std::deque<std::shared_ptr<Entity> > getEntities() { return entities_; }
+        /**
+         * Some getters
+         */
+        shared_ptr<PlayerShip> getPS() const { return ps_; }
+        shared_ptr<EntityList> get_enemyships() const { return enemyships_; }
+        shared_ptr<EntityList> get_bullets() const { return bullets_; }
     };
 
 } /* namespace model */

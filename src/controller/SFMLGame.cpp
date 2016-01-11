@@ -1,42 +1,22 @@
-/**
- * @file
- *      Sets up a SFML Game and runs it.
- * @author
- *      Olivier Brewaeys
- *
- * Every level can be seen as one game and its corresponding world.
- * This class also holds the game state, like the elapsed time and
- * delegates user requests to the model which updates the view.
- * It is the main controller function and runs the main/game loop.
- */
-
 #include "SFMLGame.h"
 
 namespace si {
 namespace controller {
 
-    /**
-     * Setup a game window and a world object
-     */
     SFMLGame::SFMLGame()
-        : window_(std::make_shared<sf::RenderWindow>(sf::VideoMode(1600, 1200),
+        : window_(std::make_shared<sf::RenderWindow>(sf::VideoMode(1200, 1600),
               "Space Invaders", sf::Style::Titlebar | sf::Style::Close))
         , world_(std::make_shared<model::World>())
-        , view_(std::make_unique<view::View>(world_, window_))
+        , view_(std::make_shared<view::View>(world_, window_))
     {
     }
 
-    /**
-     * Properly close the SFML window.
-     */
-    SFMLGame::~SFMLGame() { window_->close(); }
-
-    /**
-     * The main loop
-     */
     void SFMLGame::run()
     {
+        // while the window is open
         while (window_->isOpen()) {
+
+            // proces events
             sf::Event event;
             while (window_->pollEvent(event)) {
                 int action;
@@ -46,8 +26,20 @@ namespace controller {
                 else if (event.type == sf::Event::KeyPressed) {
                     action = Keyboard::getKeyboard().processKeys(event);
                 }
-                world_->update();
+                // update the world as long as the player lives
+                // Returns false when player dies.
+                if (!world_->update()) {
+                    // here be levels
+                }
             }
+            // clear the window...
+            window_->clear(sf::Color::Black);
+
+            // ...draw the entitites...
+            view_->draw();
+
+            // ...and display them on the window!
+            window_->display();
         }
     }
 

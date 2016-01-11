@@ -22,7 +22,6 @@
 #include "Entity.h"
 #include "../util/Vector2D.h"
 
-#include <string>
 #include <memory>
 
 namespace si {
@@ -61,16 +60,6 @@ namespace model {
          *              a target or left the world grid
          */
         bool update();
-
-        /**
-         * Implementation of type function from ABC entity.
-         *
-         * Type function which return the type of the entity. This is needed to
-         * determine which sprites to draw in the views.
-         *
-         * @return   a string defining the type
-         */
-        std::string type() const { return "bullet"; }
     };
 
 } /* namespace model */

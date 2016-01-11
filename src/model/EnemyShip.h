@@ -7,8 +7,7 @@
  *	An enemyship is spawned at a location determined by its index.
  *  Each enemyship has a unique index.
  *  The ships are placed in rows of 5, the first row starts at the top of the
- *screen,
- *  going down form there.
+ *  screen, going down form there.
  *  An enemyhsip starts with 1 hitpoint, a speed of 1. Its size is 1 width
  *  unit and 2 height units.
  *
@@ -69,16 +68,6 @@ namespace model {
          * @return   true when the playership is still alive.
          */
         bool update();
-
-        /**
-         * Implementation of type function from ABC entity.
-         *
-         * Type function which return the type of the entity. This is needed to
-         * determine which sprites to draw in the views.
-         *
-         * @return   a string defining the type.
-         */
-        std::string type() const { return "enemyship"; }
 
         /**
          * Creates a bullet at the current location the enemyship.

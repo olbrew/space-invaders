@@ -22,8 +22,6 @@
 #include "Bullet.h"
 #include "../util/Vector2D.h"
 
-#include <string>
-
 namespace si {
 namespace model {
 
@@ -63,16 +61,6 @@ namespace model {
          * @return   true when the playership is still alive.
          */
         bool update();
-
-        /**
-         * Implementation of type function from ABC entity.
-         *
-         * Type function which return the type of the entity. This is needed to
-         * determine which sprites to draw in the views.
-         *
-         * @return   a string defining the type.
-         */
-        std::string type() const { return "playership"; }
 
         /**
          * Move playership on the horizontal axis with an offset.
