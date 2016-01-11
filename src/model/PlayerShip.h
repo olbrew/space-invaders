@@ -83,6 +83,14 @@ namespace model {
          * @param   hp     The amount of hp to decrease with: default = 1.
          */
         void hit(const unsigned int hp = 1);
+
+        /**
+         * Simple getter for the position.
+         * This is needed for drawing the enity.
+         *
+         * @return  The current posititon of the entity.
+         */
+        Position getPosition() const { return pos_; }
     };
 
 } /* namespace model */

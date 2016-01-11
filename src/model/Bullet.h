@@ -60,6 +60,14 @@ namespace model {
          *              a target or left the world grid
          */
         bool update();
+
+        /**
+         * Simple getter for the position.
+         * This is needed for drawing the enity.
+         *
+         * @return  The current posititon of the entity.
+         */
+        Position getPosition() const { return pos_; }
     };
 
 } /* namespace model */

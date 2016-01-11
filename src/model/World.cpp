@@ -5,8 +5,8 @@ namespace model {
 
     World::World()
         : ps_(std::make_shared<PlayerShip>())
-        , enemyships_(std::make_shared<EntityList>())
-        , bullets_(std::make_shared<EntityList>())
+        , enemyships_(std::make_shared<EnemyShipList>())
+        , bullets_(std::make_shared<BulletList>())
     {
         // generate 20 enemyships which will be divided over four rows of 5 each
         for (unsigned int i = 0; i < 20; ++i) {

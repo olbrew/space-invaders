@@ -2,6 +2,7 @@
 #define VIEW_H_
 
 #include "../model/World.h"
+#include "../util/Vector2D.h"
 
 #include <SFML/Graphics.hpp>
 #include <stdexcept>
@@ -34,6 +35,9 @@ namespace view {
         void load_bullet_texture();
 
     public:
+        typedef util::Vector2D<unsigned int> Position;
+        static const unsigned int SCALE;
+
         /**
          * Set up a view. Sets up the sprites and registers a window and world
          * object to work with.

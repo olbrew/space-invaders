@@ -33,7 +33,7 @@ namespace controller {
                 }
             }
             // clear the window...
-            window_->clear(sf::Color::Black);
+            window_->clear(sf::Color::White);
 
             // ...draw the entitites...
             view_->draw();
