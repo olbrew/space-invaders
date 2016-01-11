@@ -1,4 +1,5 @@
 #include "EnemyShip.h"
+#include <iostream>
 
 namespace si {
 namespace model {
@@ -6,13 +7,13 @@ namespace model {
     EnemyShip::EnemyShip(const unsigned int index, const bool right,
         const Size size, const unsigned int hp, const unsigned int speed)
         : index_(index)
+        , pos_((((index % 5) + 2) * 2), (((index % 4) + 1) * 2))
         , right_(right)
         , size_(size)
         , hp_(hp)
         , speed_(speed)
     {
-        pos_.x = ((index + 1) * 2) + 2;
-        pos_.y = ((index % 5) + 1) * 2;
+        std::cout << pos_.x << ", " << pos_.y << std::endl;
     }
 
     bool EnemyShip::update()
@@ -24,7 +25,7 @@ namespace model {
         else {
             // then calculate new postion
             // (re)calculate original x coordinate based on index.
-            unsigned int start_x = ((index_ + 1) * 2) + 2;
+            unsigned int start_x = ((index_ % 5) + 2) * 2;
             if (right_) {
                 unsigned int new_x = pos_.x + speed_;
                 if (new_x > start_x + 2) {
@@ -39,6 +40,7 @@ namespace model {
                 unsigned int new_x = pos_.x - speed_;
                 if (new_x < start_x - 3) {
                     pos_.x = start_x - 3;
+                    right_ = true;
                 }
                 else {
                     pos_.x = new_x;
