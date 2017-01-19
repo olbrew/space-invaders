@@ -15,7 +15,7 @@ and start the game for you. You can find it in the root directory.
 Remember that this will take some time for the compilation phase on the first
 run.
 
-    ./run.sh
+./run.sh
 
 Design
 ------
@@ -38,45 +38,45 @@ This strict separation of duties can be seen in the dependency graph:
 
 ![dependency graph](./doc/dependency graph.png)
 
-After the events have been polled it is time to update the entities.
-This is quite easy because the world contains all the entities.
-Though not one big list of all entities. I thought about doing this, but
-decided in the end that advantage of having one big list of entitities
-didn't weigh up against the disadvantages of constantly having to do
-checks for which object the entity actually pointed to which were not solvable
-via polymorphic function calls.
+    After the events have been polled it is time to update the entities.
+    This is quite easy because the world contains all the entities.
+    Though not one big list of all entities. I thought about doing this, but
+    decided in the end that advantage of having one big list of entitities
+    didn't weigh up against the disadvantages of constantly having to do
+    checks for which object the entity actually pointed to which were not solvable
+    via polymorphic function calls.
 
-Though the world still holds all the current entities and the `update` function
-from the ABC entity updates on its part all the enitities the world
-contains. So this is still an application from the Composite design pattern.
+    Though the world still holds all the current entities and the `update` function
+    from the ABC entity updates on its part all the enitities the world
+    contains. So this is still an application from the Composite design pattern.
 
-In the UML diagram for Entity and its children you can clearly see the Entity
-and its virtual functions `update` and `getPosition`. `getPosition` is used
-polymorphically in the view to calculate the position for
-Enemyships and Bullets which are stored in containers with Entity pointers.
+    In the UML diagram for Entity and its children you can clearly see the Entity
+    and its virtual functions `update` and `getPosition`. `getPosition` is used
+    polymorphically in the view to calculate the position for
+    Enemyships and Bullets which are stored in containers with Entity pointers.
 
 ![UML diagram for Entity and its children](./doc/uml diagram model.png)
 
-I tried to limit memory consumption through extensive use of pointers whenever
-the variables needed accessing across the libraries (model, view & controller
-are all defined in their separate libraries to maximise reusability.). I did
-still take care to not pollute the heap with variables which don't need this
-global access.
+    I tried to limit memory consumption through extensive use of pointers whenever
+    the variables needed accessing across the libraries (model, view & controller
+            are all defined in their separate libraries to maximise reusability.). I did
+    still take care to not pollute the heap with variables which don't need this
+    global access.
 
-Because a construct to store 2 variables is often needed, for example for a
-Position or Size on a 2D grid, I made a `Vector2D` template which can be reused
-across different types. It can be found in the `util` library together with a
-`RandomGenerator` class
-This Vector2D is then typedef'd with an appropriate type in some classes to
-make it more easily recognizable.
+    Because a construct to store 2 variables is often needed, for example for a
+    Position or Size on a 2D grid, I made a `Vector2D` template which can be reused
+    across different types. It can be found in the `util` library together with a
+    `RandomGenerator` class
+    This Vector2D is then typedef'd with an appropriate type in some classes to
+    make it more easily recognizable.
 
-I also try to only make methods public when they need to actually be publicly
-accessible.
+    I also try to only make methods public when they need to actually be publicly
+    accessible.
 
-For more information you can read the extensively documented source or
-use the generated Doxygen documentation by opening `doc/html/index.html` in your
-browser of choice.
+    For more information you can read the extensively documented source or
+    use the generated Doxygen documentation by opening `doc/html/index.html` in your
+    browser of choice.
 
-Author
-------
-Olivier Brewaeys (s0114375)
+    Author
+    ------
+    Olivier Brewaeys
